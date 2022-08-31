@@ -134,6 +134,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: FingersJoystickPrefab
       objectReference: {fileID: 0}
+    - target: {fileID: 114317734903710598, guid: 621e3826a3af91d469707cf580fc75bb, type: 3}
+      propertyPath: DeadZones.x
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114317734903710598, guid: 621e3826a3af91d469707cf580fc75bb, type: 3}
+      propertyPath: DeadZones.y
+      value: 0.8
+      objectReference: {fileID: 0}
     - target: {fileID: 224311580566312476, guid: 621e3826a3af91d469707cf580fc75bb, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
