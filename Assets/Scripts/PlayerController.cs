@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float currentAttractionCharacter = 0;
     [SerializeField] private FingersJoystickScript fingersJoystickScript;
     private CharacterController characterController;
+    private Animator characterAnimator;
 
     private void Awake()
     {
@@ -23,6 +24,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         characterController = GetComponent<CharacterController>();
+        characterAnimator = GetComponent<Animator>();
     }
 
     void Update()
@@ -64,8 +66,17 @@ public class PlayerController : MonoBehaviour
 
     private void JoystickExecuted(FingersJoystickScript script, Vector2 amount)
     {
-        MoveCharacter(new Vector3(amount.x, 0, amount.y));
-        RotateCharacter(new Vector3(amount.x, 0, amount.y));
+
+        if (amount != Vector2.zero)
+        {
+            MoveCharacter(new Vector3(amount.x, 0, amount.y));
+            RotateCharacter(new Vector3(amount.x, 0, amount.y));
+            characterAnimator.SetBool("isMoving", true);
+        }
+        else
+        {
+            characterAnimator.SetBool("isMoving", false);
+        }
     }
 }
 
