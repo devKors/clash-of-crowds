@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using DigitalRubyShared;
 
@@ -69,6 +67,11 @@ public class PlayerController : MonoBehaviour
 
         if (amount != Vector2.zero)
         {
+            if (GameManager.Instance.state != GameState.Game)
+            {
+                GameManager.Instance.SetGameState(GameState.Game);
+            }
+
             MoveCharacter(new Vector3(amount.x, 0, amount.y));
             RotateCharacter(new Vector3(amount.x, 0, amount.y));
             characterAnimator.SetBool("isMoving", true);

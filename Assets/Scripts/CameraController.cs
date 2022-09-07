@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraControlle : MonoBehaviour
+public class CameraController : MonoBehaviour
 {
     [SerializeField] private GameObject character;
     [SerializeField] private float returnSpeed;
