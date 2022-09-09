@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
-public class CollectItems : MonoBehaviour
+public class StackItems : MonoBehaviour
 {
     public Transform backpack;
+    public Stack<Transform> items;
     private int numOfItems = 0;
     private int numOfAnimatedItems = 0;
 
@@ -16,12 +17,16 @@ public class CollectItems : MonoBehaviour
     [SerializeField]
     private float animationDurationFactor = 0.02f;
     [SerializeField]
-    private float jumpPower = 1.5f;
+    private float jumpPower = 1.2f;
     [SerializeField]
     private float jumpPowerFactor = 0.02f;
 
+    void Start()
+    {
+        items = new Stack<Transform>();
+    }
 
-    public void CollectItem(Transform newItem)
+    public void PushItem(Transform newItem)
     {
         newItem.SetParent(backpack, true);
 
@@ -33,6 +38,7 @@ public class CollectItems : MonoBehaviour
             () => {
                 numOfAnimatedItems++;
             });
+        // TODO: USE QUATERNION;
         sequence.Join(newItem.DOLocalRotate(Vector3.zero, factoredAnimationDuration).OnComplete(
             () => {
 
@@ -40,7 +46,21 @@ public class CollectItems : MonoBehaviour
                     newItem.localRotation = Quaternion.identity;
 
                     numOfItems++;
+                    items.Push(newItem);
+
             }
         ));
+    }
+
+    public Transform PopItem()
+    {
+        if (items.Count > 0)
+        {
+            numOfAnimatedItems--;
+            numOfItems--;
+            return items.Pop();
+        }
+
+        return null;
     }
 }

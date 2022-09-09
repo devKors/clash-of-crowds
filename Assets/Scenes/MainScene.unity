@@ -128,6 +128,24 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6715165676846366372, guid: c14cee0d1094b480dbd22d39efb6cbe5, type: 3}
   m_PrefabInstance: {fileID: 6715165676279935812}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &45046410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 45046402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4665032e51f454800b7b55bea833ab86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  backpack: {fileID: 1041406052}
+  itemHeight: 0.2
+  animationDuration: 0.4
+  animationDurationFactor: 0.02
+  jumpPower: 1.2
+  jumpPowerFactor: 0.02
 --- !u!1 &57497919
 GameObject:
   m_ObjectHideFlags: 0
@@ -381,6 +399,23 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 224311580566312476, guid: 621e3826a3af91d469707cf580fc75bb, type: 3}
   m_PrefabInstance: {fileID: 205841081}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &226191118 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2533601588871852215, guid: 75495ee3721da492e92adcb9c4fa3038, type: 3}
+  m_PrefabInstance: {fileID: 8379638304770602205}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &226191124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 226191118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 289532ea872644997a30a17f451ee88f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &309964390 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114317734903710598, guid: 621e3826a3af91d469707cf580fc75bb, type: 3}
@@ -837,6 +872,72 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 856593143}
   m_CullTransparentMesh: 1
+--- !u!1 &871357356
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 871357359}
+  - component: {fileID: 871357358}
+  - component: {fileID: 871357357}
+  m_Layer: 0
+  m_Name: WithdrawItems
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!135 &871357357
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 871357356}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 3
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &871357358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 871357356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bef36bb27907c4b0eaeb88f9cb38da21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animationDuration: 0.2
+  waitBetweenAnimations: 0.15
+  jumpPower: 0
+--- !u!4 &871357359
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 871357356}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.02, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1041406052 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1041406052, guid: c14cee0d1094b480dbd22d39efb6cbe5, type: 3}
+  m_PrefabInstance: {fileID: 6715165676279935812}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1411730561
 GameObject:
   m_ObjectHideFlags: 0
@@ -1931,7 +2032,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2533601588871852215, guid: 75495ee3721da492e92adcb9c4fa3038, type: 3}
       propertyPath: m_Name
-      value: CollectableBox
+      value: StackableBox
       objectReference: {fileID: 0}
     - target: {fileID: 5436289510328245967, guid: 75495ee3721da492e92adcb9c4fa3038, type: 3}
       propertyPath: m_RootOrder
