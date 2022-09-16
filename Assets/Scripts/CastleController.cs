@@ -31,11 +31,11 @@ public class CastleController : MonoBehaviour
 
                 if (isMyCastle)
                 {
-                    Debug.Log("Lose");
+                    GameManager.Instance.SetGameState(GameState.Lose);
                 }
                 else
                 {
-                    Debug.Log("Win");
+                    GameManager.Instance.SetGameState(GameState.Victory);
                 }
             }
         }

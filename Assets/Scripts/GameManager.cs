@@ -41,8 +41,10 @@ public class GameManager : MonoBehaviour
             case GameState.Pause:
                 break;
             case GameState.Victory:
+                HandleVictoryGameState();
                 break;
             case GameState.Lose:
+                HandleLoseGameState();
                 break;
             default:
                 break;
@@ -60,7 +62,17 @@ public class GameManager : MonoBehaviour
     {
         MenuManager.Instance.ToggleMenu(Menu.LobbyMenu, false);
         MenuManager.Instance.ToggleMenu(Menu.GameMenu, true);
+    }
 
+    private void HandleLoseGameState()
+    {
+        MenuManager.Instance.ToggleMenu(Menu.GameMenu, false);
+        MenuManager.Instance.ToggleMenu(Menu.LoseMenu, true);
+    }
 
+    private void HandleVictoryGameState()
+    {
+        MenuManager.Instance.ToggleMenu(Menu.GameMenu, false);
+        MenuManager.Instance.ToggleMenu(Menu.VictoryMenu, true);
     }
 }
