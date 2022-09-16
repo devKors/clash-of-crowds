@@ -14,6 +14,8 @@ public class WithdrawItems : MonoBehaviour
     private float jumpPower = 0f;
     [SerializeField]
     private GameObject unitSpawner;
+    [SerializeField]
+    private GameObject character;
     private UnitSpawnerController unitSpawnerController;
 
 
@@ -24,7 +26,7 @@ public class WithdrawItems : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag(character.tag))
         {
             StackItems stackItems;
 
@@ -38,7 +40,7 @@ public class WithdrawItems : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag(character.tag))
         {
             StopCoroutine(withdrawCoroutine);
         }

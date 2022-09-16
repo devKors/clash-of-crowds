@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class StackableItem : MonoBehaviour
 {
+    [SerializeField]
+    private GameObject character;
     private bool isStacked = false;
 
     private void OnTriggerEnter(Collider other)
@@ -13,7 +15,7 @@ public class StackableItem : MonoBehaviour
             return;
         }
 
-        if (other.CompareTag("Player"))
+        if (other.CompareTag(character.tag))
         {
             StackItems stackItems;
 

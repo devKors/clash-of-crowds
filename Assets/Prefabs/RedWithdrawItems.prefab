@@ -48,7 +48,8 @@ MonoBehaviour:
   animationDuration: 0.2
   waitBetweenAnimations: 0.15
   jumpPower: 0
-  unitSpawner: {fileID: 0}
+  unitSpawner: {fileID: 6996244711425835526, guid: 1b43cba5665ca44c786774d470a74d7a, type: 3}
+  character: {fileID: 8905745427188890197, guid: 19ebe924c8caf4049ac845921e9b13db, type: 3}
 --- !u!135 &2644745320033604206
 SphereCollider:
   m_ObjectHideFlags: 0
