@@ -67,7 +67,7 @@ public class PlayerController : MonoBehaviour
 
         if (amount != Vector2.zero)
         {
-            if (GameManager.Instance.state != GameState.Game)
+            if (GameManager.Instance.state == GameState.Lobby)
             {
                 GameManager.Instance.SetGameState(GameState.Game);
             }
