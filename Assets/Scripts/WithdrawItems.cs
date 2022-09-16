@@ -12,6 +12,15 @@ public class WithdrawItems : MonoBehaviour
     private float waitBetweenAnimations = 0.1f;
     [SerializeField]
     private float jumpPower = 0f;
+    [SerializeField]
+    private GameObject unitSpawner;
+    private UnitSpawnerController unitSpawnerController;
+
+
+    void Start()
+    {
+        unitSpawnerController = (UnitSpawnerController)unitSpawner.GetComponent(typeof(UnitSpawnerController));
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -62,6 +71,8 @@ public class WithdrawItems : MonoBehaviour
 
                     item.localPosition = new Vector3(0, 0.5f, 0);
                     item.localRotation = Quaternion.identity;
+
+                    unitSpawnerController.SpawnUnit();
             }
         );
     }
