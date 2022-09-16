@@ -6,17 +6,14 @@ using UnityEngine.AI;
 public class UnitAIController : MonoBehaviour
 {
     private NavMeshAgent unit;
+    [SerializeField]
     private GameObject enemyCastle;
-
     [SerializeField]
-    private string enemyUnitTag;
-    [SerializeField]
-    private string enemyCastleTag;
+    private GameObject enemyUnit;
 
     void Start()
     {
         unit = GetComponent<NavMeshAgent>();
-        enemyCastle = GameObject.FindWithTag(enemyCastleTag);
     }
 
     void Update()
@@ -34,7 +31,7 @@ public class UnitAIController : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-         if (other.CompareTag(enemyUnitTag))
+         if (other.CompareTag(enemyUnit.tag))
          {
             if (other != null && gameObject != null)
             {
@@ -42,19 +39,12 @@ public class UnitAIController : MonoBehaviour
                 Destroy(gameObject);
             }
          }
-        //  else if (other.CompareTag(enemyCastleTag))
-        //  {
-        //     if (gameObject != null)
-        //     {
-        //         Destroy(gameObject);
-        //     }
-        //  }
     }
 
     public GameObject FindClosestEnemy()
     {
         GameObject[] enemies;
-        enemies = GameObject.FindGameObjectsWithTag(enemyUnitTag);
+        enemies = GameObject.FindGameObjectsWithTag(enemyUnit.tag);
         GameObject closest = null;
         float distance = Mathf.Infinity;
         Vector3 position = transform.position;

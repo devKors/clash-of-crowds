@@ -135,8 +135,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5936364c9ff9649549fd8b27c6dc1129, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyUnitTag: RedUnit
-  enemyCastleTag: RedCastle
+  enemyCastle: {fileID: 1861429005579967276, guid: a2bf51ffaf5a542a2b09f4620d5144b8, type: 3}
+  enemyUnit: {fileID: 522634271620740699, guid: e54b7fe077c3a491ca125bccff93633f, type: 3}
 --- !u!54 &1325026169976688002
 Rigidbody:
   m_ObjectHideFlags: 0
