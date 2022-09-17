@@ -9,6 +9,9 @@ TagManager:
   - BlueUnit
   - BlueCastle
   - RedCastle
+  - Opponent
+  - RedStackableBox
+  - BlueStackableBox
   layers:
   - Default
   - TransparentFX

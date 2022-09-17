@@ -6,7 +6,7 @@ public class StackableItem : MonoBehaviour
 {
     [SerializeField]
     private GameObject character;
-    private bool isStacked = false;
+    public bool isStacked = false;
 
     private void OnTriggerEnter(Collider other)
     {

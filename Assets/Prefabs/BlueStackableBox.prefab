@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 4356628179486231668}
   m_Layer: 0
   m_Name: BlueStackableBox
-  m_TagString: Item
+  m_TagString: BlueStackableBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -159,4 +159,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 289532ea872644997a30a17f451ee88f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  character: {fileID: 8905745427188890197, guid: 19ebe924c8caf4049ac845921e9b13db, type: 3}
+  character: {fileID: 8905745427188890197, guid: 188067e0887b94373989b391b6a7ab9e, type: 3}

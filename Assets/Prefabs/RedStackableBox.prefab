@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 4356628179486231668}
   m_Layer: 0
   m_Name: RedStackableBox
-  m_TagString: Item
+  m_TagString: RedStackableBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
