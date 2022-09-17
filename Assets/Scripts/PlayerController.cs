@@ -64,7 +64,6 @@ public class PlayerController : MonoBehaviour
 
     private void JoystickExecuted(FingersJoystickScript script, Vector2 amount)
     {
-
         if (amount != Vector2.zero)
         {
             if (GameManager.Instance.state == GameState.Lobby)
