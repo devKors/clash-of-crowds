@@ -104,6 +104,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   backpack: {fileID: 8905745428052113587}
+  numOfItems: 0
   itemHeight: 0.2
   animationDuration: 0.4
   animationDurationFactor: 0.02
@@ -121,7 +122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 780780753a0cd45ceb1e7472a05520c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectableItem: {fileID: 4356628179486231662, guid: fc96afd669e7c4b9c834eb440b3fe7c9, type: 3}
+  withdrawItems: {fileID: 4006912531926708402, guid: 658714f63c2b2404c8a9ae6007fd515e, type: 3}
 --- !u!195 &7389242951504922942
 NavMeshAgent:
   m_ObjectHideFlags: 0

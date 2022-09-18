@@ -7,7 +7,7 @@ public class StackItems : MonoBehaviour
 {
     public Transform backpack;
     public Stack<Transform> items;
-    private int numOfItems = 0;
+    public int numOfItems = 0;
     private int numOfAnimatedItems = 0;
 
     [SerializeField]

@@ -12,6 +12,8 @@ TagManager:
   - Opponent
   - RedStackableBox
   - BlueStackableBox
+  - BlueWithdrawItems
+  - RedWithdrawItems
   layers:
   - Default
   - TransparentFX

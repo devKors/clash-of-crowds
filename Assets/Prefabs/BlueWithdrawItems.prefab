@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4006912531926708403}
   m_Layer: 0
   m_Name: BlueWithdrawItems
-  m_TagString: Untagged
+  m_TagString: BlueWithdrawItems
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -49,7 +49,7 @@ MonoBehaviour:
   waitBetweenAnimations: 0.15
   jumpPower: 0
   unitSpawner: {fileID: 8358268291023053488, guid: e3a222ccc7970405481855a21ec60982, type: 3}
-  character: {fileID: 8905745427188890197, guid: 19ebe924c8caf4049ac845921e9b13db, type: 3}
+  character: {fileID: 8905745427188890197, guid: 188067e0887b94373989b391b6a7ab9e, type: 3}
 --- !u!135 &4006912531926708403
 SphereCollider:
   m_ObjectHideFlags: 0
