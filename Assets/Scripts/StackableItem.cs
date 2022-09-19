@@ -10,10 +10,7 @@ public class StackableItem : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (isStacked)
-        {
-            return;
-        }
+        if (isStacked) { return; }
 
         if (other.CompareTag(character.tag))
         {

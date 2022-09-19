@@ -2,10 +2,14 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    [SerializeField] private GameObject character;
-    [SerializeField] private float returnSpeed;
-    [SerializeField] private float height;
-    [SerializeField] private float rearDistance;
+    [SerializeField]
+    private GameObject character;
+    [SerializeField]
+    private float returnSpeed;
+    [SerializeField]
+    private float height;
+    [SerializeField]
+    private float rearDistance;
     private Vector3 currentVector;
 
     void Start()

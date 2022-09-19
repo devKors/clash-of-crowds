@@ -6,11 +6,16 @@ using DigitalRubyShared;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private float moveSpeed;
-    [SerializeField] private float rotateSpeed;
-    [SerializeField] private float gravityForce = 20;
-    [SerializeField] private float currentAttractionCharacter = 0;
-    [SerializeField] private FingersJoystickScript fingersJoystickScript;
+    [SerializeField]
+    private float moveSpeed;
+    [SerializeField] 
+    private float rotateSpeed;
+    [SerializeField] 
+    private float gravityForce = 20;
+    [SerializeField] 
+    private float currentAttractionCharacter = 0;
+    [SerializeField] 
+    private FingersJoystickScript fingersJoystickScript;
     private CharacterController characterController;
     private Animator characterAnimator;
 

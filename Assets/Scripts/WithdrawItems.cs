@@ -5,7 +5,6 @@ using DG.Tweening;
 
 public class WithdrawItems : MonoBehaviour
 {
-    private IEnumerator withdrawCoroutine;
     [SerializeField]
     private float animationDuration = 0.2f;
     [SerializeField]
@@ -17,7 +16,7 @@ public class WithdrawItems : MonoBehaviour
     [SerializeField]
     private GameObject character;
     private UnitSpawnerController unitSpawnerController;
-
+    private IEnumerator withdrawCoroutine;
 
     void Start()
     {

@@ -5,13 +5,17 @@ using UnityEngine.AI;
 
 public class OpponentAIController : MonoBehaviour
 {
-    private NavMeshAgent opponent;
-    private GameObject closestItem;
     [SerializeField]
     private GameObject withdrawItems;
+    [SerializeField]
+    private int minBringItems;
+    [SerializeField]
+    private int maxBringItems;
+    [SerializeField]
+    private GameObject stackableBox;
+    private NavMeshAgent opponent;
+    private GameObject closestItem;
     private Animator opponentAnimator;
-    private string itemTag = "BlueStackableBox";
-    private string withdrawItemsTag = "BlueWithdrawItems";
     private StackItems stackItemsController;
     private int bringItems = 0;
     private bool isSpawning = false;
@@ -34,7 +38,7 @@ public class OpponentAIController : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag(withdrawItemsTag))
+        if (other.CompareTag(withdrawItems.tag))
         {
             bringItems = GetRandomBringItems();
             isSpawning = true;
@@ -59,7 +63,7 @@ public class OpponentAIController : MonoBehaviour
     private GameObject FindClosestItem()
     {
         GameObject[] items;
-        items = GameObject.FindGameObjectsWithTag(itemTag);
+        items = GameObject.FindGameObjectsWithTag(stackableBox.tag);
         GameObject closest = null;
         float distance = Mathf.Infinity;
         Vector3 position = transform.position;
@@ -101,6 +105,6 @@ public class OpponentAIController : MonoBehaviour
 
     private int GetRandomBringItems()
     {
-        return Random.Range(11, 13);
+        return Random.Range(minBringItems, maxBringItems);
     }
 }
