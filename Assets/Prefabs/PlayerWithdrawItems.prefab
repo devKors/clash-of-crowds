@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2644745320033604207
+--- !u!1 &4006912531926708402
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,38 +8,38 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2644745320033604204}
-  - component: {fileID: 2644745320033604205}
-  - component: {fileID: 2644745320033604206}
+  - component: {fileID: 4006912531926708405}
+  - component: {fileID: 4006912531926708404}
+  - component: {fileID: 4006912531926708403}
   m_Layer: 0
-  m_Name: RedWithdrawItems
-  m_TagString: RedWithdrawItems
+  m_Name: PlayerWithdrawItems
+  m_TagString: BlueWithdrawItems
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2644745320033604204
+--- !u!4 &4006912531926708405
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2644745320033604207}
+  m_GameObject: {fileID: 4006912531926708402}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.37, y: 0, z: -12.57}
+  m_LocalPosition: {x: 10.37, y: 0, z: 8.63}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2644745320033604205
+--- !u!114 &4006912531926708404
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2644745320033604207}
+  m_GameObject: {fileID: 4006912531926708402}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bef36bb27907c4b0eaeb88f9cb38da21, type: 3}
@@ -48,15 +48,15 @@ MonoBehaviour:
   animationDuration: 0.2
   waitBetweenAnimations: 0.15
   jumpPower: 0
-  unitSpawner: {fileID: 6996244711425835526, guid: 1b43cba5665ca44c786774d470a74d7a, type: 3}
-  character: {fileID: 8905745427188890197, guid: 19ebe924c8caf4049ac845921e9b13db, type: 3}
---- !u!135 &2644745320033604206
+  unitSpawner: {fileID: 8358268291023053488, guid: e3a222ccc7970405481855a21ec60982, type: 3}
+  character: {fileID: 1698945244800102197, guid: a534ff8db3c3044ba9fc52f1a7a42da3, type: 3}
+--- !u!135 &4006912531926708403
 SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2644745320033604207}
+  m_GameObject: {fileID: 4006912531926708402}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1

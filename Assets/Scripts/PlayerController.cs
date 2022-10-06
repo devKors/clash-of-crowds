@@ -14,20 +14,34 @@ public class PlayerController : MonoBehaviour
     private float gravityForce = 20;
     [SerializeField] 
     private float currentAttractionCharacter = 0;
-    [SerializeField] 
     private FingersJoystickScript fingersJoystickScript;
     private CharacterController characterController;
     private Animator characterAnimator;
+    private GameObject[] characters;
+    private int characterIndex;
 
     private void Awake()
     {
+
+        fingersJoystickScript = GameObject.Find("FingersJoystickPrefab").GetComponent<FingersJoystickScript>();
         fingersJoystickScript.JoystickExecuted = JoystickExecuted;
+
+        characters = new GameObject[transform.childCount];
+
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            characters[i] = transform.GetChild(i).gameObject;
+        }
+
+        characterIndex = 0;
+        SetCharacterSkin(characterIndex);
+
     }
 
     void Start()
     {
         characterController = GetComponent<CharacterController>();
-        characterAnimator = GetComponent<Animator>();
+        characterAnimator = characters[characterIndex].GetComponent<Animator>();
     }
 
     void Update()
@@ -84,6 +98,21 @@ public class PlayerController : MonoBehaviour
         {
             characterAnimator.SetBool("isMoving", false);
         }
+    }
+
+    public void SetCharacterSkin(int index)
+    {
+        foreach (GameObject go in characters)
+        {
+            go.SetActive(false);
+        }
+
+        if (characters.Length > 0)
+        {
+            characters[index].SetActive(true);
+            characterIndex = index;
+        }
+
     }
 }
 

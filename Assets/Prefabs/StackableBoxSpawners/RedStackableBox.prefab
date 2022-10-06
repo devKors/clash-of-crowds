@@ -61,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ed0e56574b62145f49c3e108601face2, type: 2}
+  - {fileID: 2100000, guid: 4886f955e26f64ea4ab2c30f48ef0bac, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -96,8 +96,8 @@ GameObject:
   - component: {fileID: 4356628179486231664}
   - component: {fileID: 4356628179486231668}
   m_Layer: 0
-  m_Name: BlueStackableBox
-  m_TagString: BlueStackableBox
+  m_Name: RedStackableBox
+  m_TagString: RedStackableBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -159,5 +159,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 289532ea872644997a30a17f451ee88f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  character: {fileID: 8905745427188890197, guid: 188067e0887b94373989b391b6a7ab9e, type: 3}
+  character: {fileID: 3016261443498136287, guid: f66ff1321d1eb478d8bb41d28373beda, type: 3}
   isStacked: 0

@@ -5,7 +5,6 @@ using UnityEngine.AI;
 
 public class OpponentAIController : MonoBehaviour
 {
-    [SerializeField]
     private GameObject withdrawItems;
     [SerializeField]
     private int minBringItems;
@@ -15,19 +14,36 @@ public class OpponentAIController : MonoBehaviour
     private GameObject stackableBox;
     private NavMeshAgent opponent;
     private GameObject closestItem;
-    private Animator opponentAnimator;
     private StackItems stackItemsController;
     private int bringItems = 0;
     private bool isSpawning = false;
+    private Animator opponentAnimator;
+    private GameObject[] opponents;
+    private int opponentIndex;
+
+
+    void Awake()
+    {
+        opponents = new GameObject[transform.childCount];
+
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            opponents[i] = transform.GetChild(i).gameObject;
+        }
+
+        opponentIndex = 1;
+        SetOpponentSkin(opponentIndex);
+    }
 
     void Start()
     {
         opponent = GetComponent<NavMeshAgent>();
-        opponentAnimator = GetComponent<Animator>();
+        opponentAnimator = opponents[opponentIndex].GetComponent<Animator>();
 
         stackItemsController = GetComponent<StackItems>();
 
         bringItems = GetRandomBringItems();
+        withdrawItems = GameObject.FindGameObjectWithTag("RedWithdrawItems");
     }
 
     void Update()
@@ -106,5 +122,20 @@ public class OpponentAIController : MonoBehaviour
     private int GetRandomBringItems()
     {
         return Random.Range(minBringItems, maxBringItems);
+    }
+
+    public void SetOpponentSkin(int index)
+    {
+        foreach (GameObject go in opponents)
+        {
+            go.SetActive(false);
+        }
+
+        if (opponents.Length > 0)
+        {
+            opponents[index].SetActive(true);
+            opponentIndex = index;
+        }
+
     }
 }

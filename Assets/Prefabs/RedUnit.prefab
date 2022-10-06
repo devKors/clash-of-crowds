@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 522634271620740698}
   m_Layer: 6
   m_Name: RedUnit
-  m_TagString: RedUnit
+  m_TagString: OpponentUnit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -135,7 +135,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5936364c9ff9649549fd8b27c6dc1129, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyCastle: {fileID: 8153754288442984710, guid: 5434dffc73dd24c6fa65e75a1f05cdb2, type: 3}
+  enemyCastle: {fileID: 8536210006234044697, guid: 3b55c84f225d24120856b38d28475cf7, type: 3}
   enemyUnit: {fileID: 1325026169976688013, guid: dd5e234ddd2764838916aec731d947f9, type: 3}
 --- !u!54 &522634271620740698
 Rigidbody:

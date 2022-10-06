@@ -6,9 +6,13 @@ public class UnitSpawnerController : MonoBehaviour
 {
     [SerializeField]
     private GameObject unitPrefab;
+    [SerializeField]
+    private string spawnerTag;
 
     public void SpawnUnit()
     {
-        Instantiate(unitPrefab, transform.position, Quaternion.identity);
+        Transform t = GameObject.FindGameObjectWithTag(spawnerTag).transform;
+        Debug.Log(t.position + " t.position");
+        Instantiate(unitPrefab, t.position, Quaternion.identity);
     }
 }

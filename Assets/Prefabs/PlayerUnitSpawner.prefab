@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 8358268291023053494}
   - component: {fileID: 8358268291023053489}
   m_Layer: 0
-  m_Name: BlueUnitSpawner
-  m_TagString: Untagged
+  m_Name: PlayerUnitSpawner
+  m_TagString: PlayerUnitSpawner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8358268291023053488}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.93, y: 0.5, z: 7.97}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -112,3 +112,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unitPrefab: {fileID: 1325026169976688013, guid: dd5e234ddd2764838916aec731d947f9, type: 3}
+  spawnerTag: PlayerUnitSpawner

@@ -56,6 +56,7 @@ public class GameManager : MonoBehaviour
     private void HandleLobbyGameState()
     {
         MenuManager.Instance.ToggleMenu(Menu.LobbyMenu, true);
+        LevelManager.Instance.GenerateLevel();
     }
 
     private void HandleGameGameState()

@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    [SerializeField]
     private GameObject character;
     [SerializeField]
     private float returnSpeed;
@@ -14,6 +13,7 @@ public class CameraController : MonoBehaviour
 
     void Start()
     {
+        character = GameObject.FindGameObjectWithTag("Player");
         transform.position = new Vector3(character.transform.position.x, character.transform.position.y + height, character.transform.position.z - rearDistance);
         transform.rotation = Quaternion.LookRotation(character.transform.position - transform.position);
     }

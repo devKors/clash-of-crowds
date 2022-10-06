@@ -7,9 +7,9 @@ public class StackableBoxSpawnerController : MonoBehaviour
 {
     private List<Transform> spawnSlots;
     [SerializeField]
-    private GameObject blueStackableBox;
+    private GameObject playerStackableBox;
     [SerializeField]
-    private GameObject redStackableBox;
+    private GameObject opponentStackableBox;
     [SerializeField]
     private float waitBetweenSpawn;
     [SerializeField]
@@ -45,11 +45,11 @@ public class StackableBoxSpawnerController : MonoBehaviour
 
         if (percent <= percentToSpawnMy)
         {
-             Instantiate(blueStackableBox, slot);
+             Instantiate(playerStackableBox, slot);
         }
         else
         {
-             Instantiate(redStackableBox, slot);
+             Instantiate(opponentStackableBox, slot);
         }
 
         StartCoroutine(SetActiveStackableBox(slot));

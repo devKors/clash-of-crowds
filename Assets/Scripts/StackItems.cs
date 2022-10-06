@@ -5,7 +5,7 @@ using DG.Tweening;
 
 public class StackItems : MonoBehaviour
 {
-    public Transform backpack;
+    private Transform backpack;
     public Stack<Transform> items;
     public int numOfItems = 0;
     private int numOfAnimatedItems = 0;
@@ -20,10 +20,13 @@ public class StackItems : MonoBehaviour
     private float jumpPower = 1.2f;
     [SerializeField]
     private float jumpPowerFactor = 0.02f;
+    [SerializeField]
+    private string backpackTag;
 
     void Start()
     {
         items = new Stack<Transform>();
+        backpack = GameObject.FindGameObjectWithTag(backpackTag).transform;
     }
 
     public void PushItem(Transform newItem)

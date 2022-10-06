@@ -14,6 +14,7 @@ public class UnitAIController : MonoBehaviour
     void Start()
     {
         unit = GetComponent<NavMeshAgent>();
+        enemyCastle = GameObject.FindGameObjectWithTag(enemyCastle.tag);
     }
 
     void Update()
