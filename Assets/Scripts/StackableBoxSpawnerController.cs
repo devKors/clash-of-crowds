@@ -28,15 +28,17 @@ public class StackableBoxSpawnerController : MonoBehaviour
 
     private void SpanwStackableBoxes()
     {
-        foreach (Transform slot in transform)
-        {
-            if  (slot.childCount == 0)
+        if (GameManager.Instance.state == GameState.Game) {
+            foreach (Transform slot in transform)
             {
-                InstantiateRandomStackableBox(slot);
+                if  (slot.childCount == 0)
+                {
+                    InstantiateRandomStackableBox(slot);
+                }
             }
-        }
 
-        isFirstSpawn = false;
+            isFirstSpawn = false;
+        }
     }
 
     private void InstantiateRandomStackableBox(Transform slot)

@@ -12,7 +12,6 @@ public class UnitSpawnerController : MonoBehaviour
     public void SpawnUnit()
     {
         Transform t = GameObject.FindGameObjectWithTag(spawnerTag).transform;
-        Debug.Log(t.position + " t.position");
-        Instantiate(unitPrefab, t.position, Quaternion.identity);
+        Instantiate(unitPrefab, t.position, t.rotation);
     }
 }

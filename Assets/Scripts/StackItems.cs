@@ -31,6 +31,10 @@ public class StackItems : MonoBehaviour
 
     public void PushItem(Transform newItem)
     {
+        if (backpack == null)
+        {
+            backpack = GameObject.FindGameObjectWithTag(backpackTag).transform;
+        }
         newItem.SetParent(backpack, true);
 
         float factoredJumpPower = jumpPower - jumpPowerFactor * numOfAnimatedItems;
@@ -57,7 +61,7 @@ public class StackItems : MonoBehaviour
 
     public Transform PopItem()
     {
-        if (items.Count > 0)
+        if (items != null && items.Count > 0)
         {
             numOfAnimatedItems--;
             numOfItems--;

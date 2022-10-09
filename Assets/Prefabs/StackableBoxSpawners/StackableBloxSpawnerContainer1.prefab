@@ -302,7 +302,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerStackableBox: {fileID: 4356628179486231662, guid: fc96afd669e7c4b9c834eb440b3fe7c9, type: 3}
   opponentStackableBox: {fileID: 4356628179486231662, guid: b54704c0cbaa646a8879aa30203adfbe, type: 3}
-  waitBetweenSpawn: 2
+  waitBetweenSpawn: 0.1
   percentToSpawnMy: 60
   minSpawnTime: 2
   maxSpawnTime: 5

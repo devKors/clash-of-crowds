@@ -83,6 +83,12 @@ public class PlayerController : MonoBehaviour
 
     private void JoystickExecuted(FingersJoystickScript script, Vector2 amount)
     {
+
+        if (GameManager.Instance.state == GameState.Lose || GameManager.Instance.state == GameState.Victory)
+        {
+            return;
+        }
+
         if (amount != Vector2.zero)
         {
             if (GameManager.Instance.state == GameState.Lobby)
@@ -112,7 +118,6 @@ public class PlayerController : MonoBehaviour
             characters[index].SetActive(true);
             characterIndex = index;
         }
-
     }
 }
 

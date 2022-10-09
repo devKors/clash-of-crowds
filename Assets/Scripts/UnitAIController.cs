@@ -10,24 +10,50 @@ public class UnitAIController : MonoBehaviour
     private GameObject enemyCastle;
     [SerializeField]
     private GameObject enemyUnit;
+    private GameObject[] unitSkins;
+    private int unitSkinIndex;
+    private Animator unitAnimator;
 
+
+    void Awake()
+    {
+        unitSkins = new GameObject[transform.childCount];
+
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            unitSkins[i] = transform.GetChild(i).gameObject;
+        }
+
+        unitSkinIndex = 0;
+        SetUnitSkin(unitSkinIndex);
+    }
     void Start()
     {
         unit = GetComponent<NavMeshAgent>();
         enemyCastle = GameObject.FindGameObjectWithTag(enemyCastle.tag);
+        unitAnimator = unitSkins[unitSkinIndex].GetComponent<Animator>();
+        unitAnimator.SetBool("isMoving", true);
     }
 
     void Update()
     {
-        GameObject closestEnemy = FindClosestEnemy();
-        if (closestEnemy != null)
+        if (GameManager.Instance.state == GameState.Game)
         {
-            unit.SetDestination(closestEnemy.transform.position);
+            GameObject closestEnemy = FindClosestEnemy();
+            if (closestEnemy != null)
+            {
+                unit.SetDestination(closestEnemy.transform.position);
+            }
+            else if (enemyCastle != null)
+            {
+                unit.SetDestination(enemyCastle.transform.position);
+            }
         }
-        else if (enemyCastle != null)
+        else
         {
-            unit.SetDestination(enemyCastle.transform.position);
+            unit.isStopped = true;
         }
+        
     }
 
     void OnTriggerEnter(Collider other)
@@ -62,5 +88,19 @@ public class UnitAIController : MonoBehaviour
         }
 
         return closest;
+    }
+
+    public void SetUnitSkin(int index)
+    {
+        foreach (GameObject go in unitSkins)
+        {
+            go.SetActive(false);
+        }
+
+        if (unitSkins.Length > 0)
+        {
+            unitSkins[index].SetActive(true);
+            unitSkinIndex = index;
+        }
     }
 }

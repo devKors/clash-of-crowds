@@ -48,13 +48,16 @@ public class OpponentAIController : MonoBehaviour
 
     void Update()
     {
-        HandleOpponentDestination();
-        AnimateOpponentMovement();
+        if (GameManager.Instance.state == GameState.Game)
+        {
+            HandleOpponentDestination();
+            AnimateOpponentMovement();
+        }
     }
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag(withdrawItems.tag))
+        if (withdrawItems != null && other.CompareTag(withdrawItems.tag))
         {
             bringItems = GetRandomBringItems();
             isSpawning = true;
@@ -64,6 +67,11 @@ public class OpponentAIController : MonoBehaviour
     private void HandleOpponentDestination()
     {
         closestItem = FindClosestItem();
+
+        if (withdrawItems == null)
+        {
+            withdrawItems = GameObject.FindGameObjectWithTag("RedWithdrawItems");
+        }
 
         if (stackItemsController.numOfItems == 0) { isSpawning = false; }
 

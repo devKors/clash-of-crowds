@@ -50,7 +50,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6996244711425835526}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -94,7 +94,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 6996244711425835526}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.5
   m_Height: 2
   m_Direction: 1
@@ -111,5 +111,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecc41618c6c2b4a929657cb94fa92cfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unitPrefab: {fileID: 522634271620740699, guid: e54b7fe077c3a491ca125bccff93633f, type: 3}
+  unitPrefab: {fileID: 2052324787255370241, guid: 929e641d9aa934640a11b78dd25f633e, type: 3}
   spawnerTag: OpponentUnitSpawner
