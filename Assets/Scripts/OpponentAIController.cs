@@ -53,6 +53,10 @@ public class OpponentAIController : MonoBehaviour
             HandleOpponentDestination();
             AnimateOpponentMovement();
         }
+        else if (GameManager.Instance.state == GameState.Lose || GameManager.Instance.state == GameState.Victory)
+        {
+            opponent.isStopped = true;
+        }
     }
 
     void OnTriggerEnter(Collider other)

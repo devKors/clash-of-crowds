@@ -71,11 +71,25 @@ public class GameManager : MonoBehaviour
     {
         MenuManager.Instance.ToggleMenu(Menu.GameMenu, false);
         MenuManager.Instance.ToggleMenu(Menu.LoseMenu, true);
+
+        int moneyMultiplyer = PlayerPrefs.GetInt(SerializableFields.MoneyMultiplyer, 0);
+        int coins = PlayerPrefs.GetInt(SerializableFields.Coins, 0);
+        int newCoins = coins + GlobalConstants.PermanentLoseReward + (GlobalConstants.AdditionalLoseReward * moneyMultiplyer);
+        PlayerPrefs.SetInt(SerializableFields.Coins, newCoins);
     }
 
     private void HandleVictoryGameState()
     {
         MenuManager.Instance.ToggleMenu(Menu.GameMenu, false);
         MenuManager.Instance.ToggleMenu(Menu.VictoryMenu, true);
+
+        int level = PlayerPrefs.GetInt(SerializableFields.Level, 1);
+        PlayerPrefs.SetInt(SerializableFields.Level, level + 1);
+
+        int moneyMultiplyer = PlayerPrefs.GetInt(SerializableFields.MoneyMultiplyer, 0);
+        int coins = PlayerPrefs.GetInt(SerializableFields.Coins, 0);
+        int newCoins = coins + GlobalConstants.PermanentVictoryReward + (GlobalConstants.AdditionalVictoryReward * moneyMultiplyer);
+        PlayerPrefs.SetInt(SerializableFields.Coins, newCoins);
+
     }
 }

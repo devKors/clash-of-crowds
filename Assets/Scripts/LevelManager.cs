@@ -16,8 +16,6 @@ public class LevelManager : MonoBehaviour
     public GameObject playerWithdrawZonePrefab;
     public GameObject playerPrefab;
     public GameObject opponentPrefab;
-    
-    // INSTANCES
     private List<GameObject> instances;
 
     void Awake()
