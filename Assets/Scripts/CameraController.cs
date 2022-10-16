@@ -10,6 +10,11 @@ public class CameraController : MonoBehaviour
     [SerializeField]
     private float rearDistance;
     private Vector3 currentVector;
+    [SerializeField]
+    private Quaternion rotationQuaternion;
+    [SerializeField]
+    private Vector3 positionVector;
+
 
     void Start()
     {
@@ -27,8 +32,9 @@ public class CameraController : MonoBehaviour
     {
         if (character != null)
         {
-            currentVector = new Vector3(character.transform.position.x, character.transform.position.y + height, character.transform.position.z - rearDistance);
+            currentVector = new Vector3(character.transform.position.x - positionVector.x, character.transform.position.y + height, character.transform.position.z - rearDistance);
             transform.position = Vector3.Lerp(transform.position, currentVector, returnSpeed * Time.deltaTime);
+            transform.rotation = rotationQuaternion;
         }
     }
 
@@ -37,7 +43,7 @@ public class CameraController : MonoBehaviour
         if (character == null)
         {
             character = GameObject.FindGameObjectWithTag("Player");
-            transform.position = new Vector3(character.transform.position.x, character.transform.position.y + height, character.transform.position.z - rearDistance);
+            transform.position = new Vector3(character.transform.position.x + positionVector.x, character.transform.position.y + height, character.transform.position.z - rearDistance);
             transform.rotation = Quaternion.LookRotation(character.transform.position - transform.position);
         }
         

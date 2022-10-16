@@ -45,8 +45,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bef36bb27907c4b0eaeb88f9cb38da21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animationDuration: 0.2
-  waitBetweenAnimations: 0.15
+  animationDuration: 0.15
+  waitBetweenAnimations: 0.1
   jumpPower: 0
   unitSpawner: {fileID: 8358268291023053488, guid: e3a222ccc7970405481855a21ec60982, type: 3}
   character: {fileID: 1698945244800102197, guid: a534ff8db3c3044ba9fc52f1a7a42da3, type: 3}
