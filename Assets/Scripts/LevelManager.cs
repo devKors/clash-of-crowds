@@ -77,8 +77,8 @@ public class LevelManager : MonoBehaviour
         CastleController opponentCastleController = opponentCastleContainer.GetComponent<CastleController>();
         CastleController playerCastleController = playerCastleContainer.GetComponent<CastleController>();
 
-        opponentCastleController.SetCastleParams(10, false, "PlayerUnit", 1);
-        playerCastleController.SetCastleParams(10, true, "OpponentUnit", 1);
+        opponentCastleController.SetCastleParams(10, false, "PlayerUnit", 2);
+        playerCastleController.SetCastleParams(10, true, "OpponentUnit", 2);
     }
 
     private void InstantiateUnitSpawners()
