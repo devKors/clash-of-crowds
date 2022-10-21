@@ -32,6 +32,7 @@ public class UnitAIController : MonoBehaviour
         unit = GetComponent<NavMeshAgent>();
         enemyCastle = GameObject.FindGameObjectWithTag(enemyCastle.tag);
         unitAnimator = unitSkins[unitSkinIndex].GetComponent<Animator>();
+        unit.speed = 3.0f;
         unitAnimator.SetBool("isMoving", true);
     }
 
@@ -47,7 +48,10 @@ public class UnitAIController : MonoBehaviour
             else if (enemyCastle != null)
             {
                 unit.SetDestination(enemyCastle.transform.position);
+                // unit.SetDestination(new Vector3(enemyCastle.transform.position.x + Random.Range(-0.5f, 0.5f), enemyCastle.transform.position.y, enemyCastle.transform.position.z));
             }
+
+            // CheckIsSpawning();
         }
         else
         {
@@ -102,5 +106,22 @@ public class UnitAIController : MonoBehaviour
             unitSkins[index].SetActive(true);
             unitSkinIndex = index;
         }
+    }
+
+    private void CheckIsSpawning()
+    {
+        GameObject goAIController = GameObject.FindGameObjectWithTag("Opponent");
+
+        if (goAIController != null)
+        {
+            OpponentAIController aiController = goAIController.GetComponent<OpponentAIController>();
+
+            if (aiController != null && !aiController.isSpawning)
+            {
+                unit.speed = 3.0f;
+                unitAnimator.SetBool("isMoving", true);
+            }
+        }
+        
     }
 }

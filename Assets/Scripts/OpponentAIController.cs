@@ -16,7 +16,7 @@ public class OpponentAIController : MonoBehaviour
     private GameObject closestItem;
     private StackItems stackItemsController;
     private int bringItems = 0;
-    private bool isSpawning = false;
+    public bool isSpawning = false;
     private Animator opponentAnimator;
     private GameObject[] opponents;
     private int opponentIndex;
