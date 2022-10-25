@@ -46,10 +46,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animationDuration: 0.15
-  waitBetweenAnimations: 0.1
+  waitBetweenAnimations: 0.02
   jumpPower: 0
-  unitSpawner: {fileID: 8358268291023053488, guid: e3a222ccc7970405481855a21ec60982, type: 3}
   character: {fileID: 1698945244800102197, guid: a534ff8db3c3044ba9fc52f1a7a42da3, type: 3}
+  crowdSpawnerGO: {fileID: 3849834615020890899, guid: 85505b3dc8ffd413e88effab2ad2fa0b, type: 3}
+  isSpawning: 0
 --- !u!135 &4006912531926708403
 SphereCollider:
   m_ObjectHideFlags: 0

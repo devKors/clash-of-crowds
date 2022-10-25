@@ -1198,7 +1198,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 780780753a0cd45ceb1e7472a05520c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minBringItems: 5
+  minBringItems: 10
   maxBringItems: 12
   stackableBox: {fileID: 4356628179486231662, guid: b54704c0cbaa646a8879aa30203adfbe, type: 3}
   isSpawning: 0

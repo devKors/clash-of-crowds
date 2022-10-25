@@ -12,15 +12,17 @@ public class WithdrawItems : MonoBehaviour
     [SerializeField]
     private float jumpPower = 0f;
     [SerializeField]
-    private GameObject unitSpawner;
-    [SerializeField]
     private GameObject character;
-    private UnitSpawnerController unitSpawnerController;
     private IEnumerator withdrawCoroutine;
+    private CrowdSpawner crowdSpawner;
+    [SerializeField]
+    private GameObject crowdSpawnerGO;
+    public bool isSpawning = true;
 
-    void Start()
+    void Awake()
     {
-        unitSpawnerController = (UnitSpawnerController)unitSpawner.GetComponent(typeof(UnitSpawnerController));
+        crowdSpawner = crowdSpawnerGO.GetComponent<CrowdSpawner>();
+        isSpawning = true;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -31,8 +33,14 @@ public class WithdrawItems : MonoBehaviour
 
             if (other.TryGetComponent(out stackItems))
             {
-                withdrawCoroutine = WithdrawItemsCoroutine(stackItems);
-                StartCoroutine(withdrawCoroutine);
+                    if (stackItems.items.Count > 0)
+                    {
+                        isSpawning = true;
+                        crowdSpawner.InstantiateCrowd();
+                        withdrawCoroutine = WithdrawItemsCoroutine(stackItems);
+                        StartCoroutine(withdrawCoroutine);
+                    }
+                    
             }
         }
     }
@@ -41,7 +49,11 @@ public class WithdrawItems : MonoBehaviour
     {
         if (other.CompareTag(character.tag))
         {
-            StopCoroutine(withdrawCoroutine);
+            if (withdrawCoroutine != null)
+            {
+                StopCoroutine(withdrawCoroutine);
+            }
+            isSpawning = false;
         }
     }
 
@@ -54,6 +66,10 @@ public class WithdrawItems : MonoBehaviour
             if (item != null)
             {
                 AnimateItemMovement(item);
+            }
+            else
+            {
+                isSpawning =  false;
             }
 
             yield return new WaitForSeconds(waitBetweenAnimations);
@@ -73,7 +89,7 @@ public class WithdrawItems : MonoBehaviour
                     item.localPosition = new Vector3(0, 0.5f, 0);
                     item.localRotation = Quaternion.identity;
 
-                    unitSpawnerController.SpawnUnit();
+                    crowdSpawner.InstantiateUnitToCrowd();
             }
         );
     }

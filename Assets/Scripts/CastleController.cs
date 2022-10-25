@@ -24,7 +24,6 @@ public class CastleController : MonoBehaviour
     
     void OnTriggerEnter(Collider other)
     {
-
         if (GameManager.Instance.state != GameState.Game)
         {
             return;

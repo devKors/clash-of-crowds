@@ -22,9 +22,12 @@ public class StackItems : MonoBehaviour
     [SerializeField]
     private string backpackTag;
 
-    void Start()
+    void Awake()
     {
         items = new Stack<Transform>();
+    }
+    void Start()
+    {
         backpack = GameObject.FindGameObjectWithTag(backpackTag).transform;
     }
 

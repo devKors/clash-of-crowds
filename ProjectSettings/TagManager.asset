@@ -25,6 +25,8 @@ TagManager:
   - OpponentUnitSpawner
   - PlayerUnit
   - OpponentUnit
+  - PlayerCrowd
+  - OpponentCrowd
   layers:
   - Default
   - TransparentFX

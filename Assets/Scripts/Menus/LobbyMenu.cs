@@ -10,14 +10,20 @@ public class LobbyMenu : MonoBehaviour
     public Button towerHealthButton;
     public TextMeshProUGUI towerHealthLabelLevel;
     public TextMeshProUGUI towerHealthLabelPrice;
+    public TextMeshProUGUI towerHealthLabel;
+    public Image towerHealthCoin;
 
     public Button numberOfItemsButton;
     public TextMeshProUGUI numberOfItemsLabelLevel;
     public TextMeshProUGUI numberOfItemsLabelPrice;
+    public TextMeshProUGUI numberOfItemsLabel;
+    public Image numberOfItemsCoin;
 
     public Button moneyMultiplyerButton;
     public TextMeshProUGUI moneyMultiplyerLabelLevel;
     public TextMeshProUGUI moneyMultiplyerLabelPrice;
+    public TextMeshProUGUI moneyMultiplyerLabel;
+    public Image moneyMultiplyerCoin;
     
 
     void OnEnable()
@@ -34,13 +40,13 @@ public class LobbyMenu : MonoBehaviour
         levelLabel.text = $"Level {level}";
         coinsLabel.text = $"{coins}";
 
-        towerHealthLabelLevel.text = $"Tower {towerHealth + 1}";
-        numberOfItemsLabelLevel.text = $"Items {numberOfItems + 1}";
-        moneyMultiplyerLabelLevel.text = $"Money {moneyMultiplyer + 1}";
+        towerHealthLabelLevel.text = $"{towerHealth + 1}";
+        numberOfItemsLabelLevel.text = $"{numberOfItems + 1}";
+        moneyMultiplyerLabelLevel.text = $"{moneyMultiplyer + 1}";
 
-        towerHealthLabelPrice.text = $"Price {(towerHealth + 1) * GlobalConstants.IncreaseStep}";
-        numberOfItemsLabelPrice.text = $"Price {(numberOfItems + 1) * GlobalConstants.IncreaseStep}";
-        moneyMultiplyerLabelPrice.text = $"Price {(moneyMultiplyer + 1) * GlobalConstants.IncreaseStep}";
+        towerHealthLabelPrice.text = $"{(towerHealth + 1) * GlobalConstants.IncreaseStep}";
+        numberOfItemsLabelPrice.text = $"{(numberOfItems + 1) * GlobalConstants.IncreaseStep}";
+        moneyMultiplyerLabelPrice.text = $"{(moneyMultiplyer + 1) * GlobalConstants.IncreaseStep}";
 
         UpdateButtonState();
     } 
@@ -69,8 +75,8 @@ public class LobbyMenu : MonoBehaviour
         int newValue = value + 1;
         PlayerPrefs.SetInt(serializableField, newValue);
 
-        labelLevel.text = $"Level {newValue + 1}";
-        labelPrice.text = $"Price {(newValue + 1) * GlobalConstants.IncreaseStep}";
+        labelLevel.text = $"{newValue + 1}";
+        labelPrice.text = $"{(newValue + 1) * GlobalConstants.IncreaseStep}";
 
         int coins = PlayerPrefs.GetInt(SerializableFields.Coins, 0);
         int newCoins = coins - newValue * GlobalConstants.IncreaseStep;
@@ -86,7 +92,28 @@ public class LobbyMenu : MonoBehaviour
         int moneyMultiplyer = PlayerPrefs.GetInt(SerializableFields.MoneyMultiplyer, 0);
 
         towerHealthButton.interactable = ((towerHealth + 1) * GlobalConstants.IncreaseStep <= coins) ? true : false;
+        towerHealthLabelPrice.alpha = ((towerHealth + 1) * GlobalConstants.IncreaseStep <= coins) ? 255f : 0.2f;
+        towerHealthLabel.alpha = ((towerHealth + 1) * GlobalConstants.IncreaseStep <= coins) ? 255f : 0.2f;
+        towerHealthLabelLevel.alpha = ((towerHealth + 1) * GlobalConstants.IncreaseStep <= coins) ? 255f : 0.2f;
+        Color towerCoinColor = towerHealthCoin.color;
+        towerCoinColor.a = ((towerHealth + 1) * GlobalConstants.IncreaseStep <= coins) ? 255f : 0.2f;
+        towerHealthCoin.color = towerCoinColor;
+
         numberOfItemsButton.interactable = ((numberOfItems + 1) * GlobalConstants.IncreaseStep <= coins) ? true : false;
+        numberOfItemsLabelPrice.alpha = ((numberOfItems + 1) * GlobalConstants.IncreaseStep <= coins) ? 255f : 0.2f;
+        numberOfItemsLabel.alpha = ((numberOfItems + 1) * GlobalConstants.IncreaseStep <= coins) ? 255f : 0.2f;
+        numberOfItemsLabelLevel.alpha = ((numberOfItems + 1) * GlobalConstants.IncreaseStep <= coins) ? 255f : 0.2f;
+        Color numberOfItemsColor = numberOfItemsCoin.color;
+        numberOfItemsColor.a = ((numberOfItems + 1) * GlobalConstants.IncreaseStep <= coins) ? 255f : 0.2f;
+        numberOfItemsCoin.color = numberOfItemsColor;
+
         moneyMultiplyerButton.interactable = ((moneyMultiplyer + 1) * GlobalConstants.IncreaseStep <= coins) ? true : false;
+        moneyMultiplyerLabelPrice.alpha = ((moneyMultiplyer + 1) * GlobalConstants.IncreaseStep <= coins) ? 255f : 0.2f;
+        moneyMultiplyerLabel.alpha = ((moneyMultiplyer + 1) * GlobalConstants.IncreaseStep <= coins) ? 255f : 0.2f;
+        moneyMultiplyerLabelLevel.alpha = ((moneyMultiplyer + 1) * GlobalConstants.IncreaseStep <= coins) ? 255f : 0.2f;
+        Color moneyMultiplyerColor = moneyMultiplyerCoin.color;
+        moneyMultiplyerColor.a = ((moneyMultiplyer + 1) * GlobalConstants.IncreaseStep <= coins) ? 255f : 0.2f;
+        moneyMultiplyerCoin.color = moneyMultiplyerColor;
+
     }
 }
