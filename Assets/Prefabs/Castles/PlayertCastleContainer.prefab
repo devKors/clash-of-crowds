@@ -8663,6 +8663,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyTag: OpponentUnit
+  healthBar: {fileID: 407143339527180401, guid: b6fac2cd8fcba484fa7234775cf0c975, type: 3}
 --- !u!65 &2595033286160055258
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -70,7 +70,7 @@ public class CrowdController : MonoBehaviour
 
         foreach (GameObject enemy in enemies)
         {   
-            if (enemy.transform.childCount == 0)
+            if (enemy.transform.childCount == 1)
             {
                 continue;
             }

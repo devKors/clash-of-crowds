@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class CastleController : MonoBehaviour
 {
-    private int health;
+    public int health;
     private bool isMyCastle;
     [SerializeField]
     private string enemyTag;
     private GameObject[] castles;
+    public GameObject healthBar;
 
     void Awake()
     {
@@ -20,6 +21,8 @@ public class CastleController : MonoBehaviour
         }
 
         SetCastleSkin(0);
+
+        Instantiate(healthBar, transform);
     }
     
     void OnTriggerEnter(Collider other)

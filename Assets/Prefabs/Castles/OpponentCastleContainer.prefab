@@ -49,6 +49,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyTag: PlayerUnit
+  healthBar: {fileID: 407143339527180401, guid: b6fac2cd8fcba484fa7234775cf0c975, type: 3}
 --- !u!65 &4025664588372737586
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8491,7 +8492,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 14479
+  m_VersionIndex: 14482
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
