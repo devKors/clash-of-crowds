@@ -13,14 +13,19 @@ public class CrowdSpawner : MonoBehaviour
     
     public void InstantiateCrowd()
     {
-        Transform t = GameObject.FindGameObjectWithTag(spawnerTag).transform;
-        currentCrowd = Instantiate(crowdContainer, t.position, t.rotation);
+        Transform t = GameObject.FindWithTag(spawnerTag).transform;
+        currentCrowd = Instantiate(crowdContainer, t.position, Quaternion.identity);
     }
 
-    public void InstantiateUnitToCrowd()
+    public void InstantiateUnitToCrowd(Material material)
     {
         Vector3 randomPosition = Random.insideUnitSphere * 0.1f;
         Vector3 unitPosition = new Vector3(currentCrowd.transform.position.x + randomPosition.x, currentCrowd.transform.position.y, currentCrowd.transform.position.z +  + randomPosition.z);
-        Instantiate(unitContainer, unitPosition, Quaternion.identity, currentCrowd.transform);
+        GameObject unit = Instantiate(unitContainer, unitPosition, Quaternion.identity, currentCrowd.transform);
+        
+        if (material != null)
+        {
+            unit.GetComponentInChildren<Renderer>().material = material;
+        }
     }
 }

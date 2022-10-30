@@ -150,4 +150,12 @@ public class OpponentAIController : MonoBehaviour
         }
 
     }
+
+    public void SetOpponentMaterial(Material material)
+    {
+        foreach (GameObject go in opponents)
+        {
+            go.GetComponentInChildren<Renderer>().material = material;
+        }
+    }
 }

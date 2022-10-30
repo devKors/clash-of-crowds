@@ -15,8 +15,7 @@ public class CameraController : MonoBehaviour
     [SerializeField]
     private Vector3 positionVector;
 
-
-    void Start()
+    void Awake()
     {
         SetCharacter();
     }
@@ -43,9 +42,12 @@ public class CameraController : MonoBehaviour
         if (character == null)
         {
             character = GameObject.FindGameObjectWithTag("Player");
-            transform.position = new Vector3(character.transform.position.x + positionVector.x, character.transform.position.y + height, character.transform.position.z - rearDistance);
-            transform.rotation = Quaternion.LookRotation(character.transform.position - transform.position);
+
+            if (character != null)
+            {
+                transform.position = new Vector3(character.transform.position.x + positionVector.x, character.transform.position.y + height, character.transform.position.z - rearDistance);
+                transform.rotation = Quaternion.LookRotation(character.transform.position - transform.position);
+            }
         }
-        
     }
 }

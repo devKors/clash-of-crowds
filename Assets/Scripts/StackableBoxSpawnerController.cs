@@ -19,6 +19,8 @@ public class StackableBoxSpawnerController : MonoBehaviour
     [SerializeField]
     private float maxSpawnTime;
     private bool isFirstSpawn;
+    private Material opponentMaterial;
+    private Material playerMaterial;
 
     void Start()
     {
@@ -47,11 +49,19 @@ public class StackableBoxSpawnerController : MonoBehaviour
 
         if (percent <= percentToSpawnMy)
         {
-             Instantiate(playerStackableBox, slot);
+             GameObject go = Instantiate(playerStackableBox, slot);
+             if (playerMaterial != null)
+             {
+                 go.GetComponentInChildren<Renderer>().material = playerMaterial;
+             }
         }
         else
         {
-             Instantiate(opponentStackableBox, slot);
+             GameObject go = Instantiate(opponentStackableBox, slot);
+             if (opponentMaterial != null)
+             {
+                 go.GetComponentInChildren<Renderer>().material = opponentMaterial;
+             }
         }
 
         StartCoroutine(SetActiveStackableBox(slot));
@@ -70,5 +80,15 @@ public class StackableBoxSpawnerController : MonoBehaviour
         }
 
         slot.GetChild(0).gameObject.SetActive(true);
+    }
+
+    public void SetPlayerMaterial(Material m)
+    {
+        this.playerMaterial = m;
+    }
+
+    public void SetOpponentMaterial(Material m)
+    {
+        this.opponentMaterial = m;
     }
 }

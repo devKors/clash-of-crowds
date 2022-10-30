@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 821819193c34b4db895033ea5c9bdc2b, type: 3}
+  m_Name: Level
+  m_EditorClassIdentifier: 
+  map: {fileID: 2910229309417305730, guid: 0199c52e7e4c24db6b2780404e7a7f3f, type: 3}
+  mapPlatformMaterial: {fileID: 2100000, guid: fe0dd684e3c5d4d0c9e1238c3545ca2c, type: 2}
+  mapStandMaterial: {fileID: 2100000, guid: 7a576406fac7c445ab9a6a2441b28726, type: 2}
+  decoration: {fileID: 2658837281215881951, guid: 2685e1aac31d04425b4f876ee3ee1ad2, type: 3}
+  decorationBuildingsMaterial: {fileID: 2100000, guid: 4b7f4e7a1ae0945f597e0dc0e6f19591, type: 2}
+  decorationFloorMaterial: {fileID: 2100000, guid: ba932a1e3e09a48a39b502fe8dacca01, type: 2}
+  fogColor: {r: 0.7932396, g: 0.9811321, b: 0, a: 0}
+  stackableBoxSpawners: {fileID: 6114545054547460330, guid: 886e23550d0af48ec8d53fcc6b868bd9, type: 3}

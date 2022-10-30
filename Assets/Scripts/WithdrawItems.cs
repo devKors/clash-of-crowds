@@ -18,6 +18,7 @@ public class WithdrawItems : MonoBehaviour
     [SerializeField]
     private GameObject crowdSpawnerGO;
     public bool isSpawning = true;
+    private Material material;
 
     void Awake()
     {
@@ -89,8 +90,14 @@ public class WithdrawItems : MonoBehaviour
                     item.localPosition = new Vector3(0, 0.5f, 0);
                     item.localRotation = Quaternion.identity;
 
-                    crowdSpawner.InstantiateUnitToCrowd();
+                    crowdSpawner.InstantiateUnitToCrowd(material);
             }
         );
+    }
+
+
+    public void SetMaterial(Material m)
+    {
+        this.material = m;
     }
 }

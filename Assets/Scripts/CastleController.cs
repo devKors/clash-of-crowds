@@ -5,11 +5,13 @@ using UnityEngine;
 public class CastleController : MonoBehaviour
 {
     public int health;
+    private int baseHealth;
     private bool isMyCastle;
     [SerializeField]
     private string enemyTag;
     private GameObject[] castles;
     public GameObject healthBar;
+    private float transformSize = 1.5f;
 
     void Awake()
     {
@@ -23,6 +25,24 @@ public class CastleController : MonoBehaviour
         SetCastleSkin(0);
 
         Instantiate(healthBar, transform);
+    }
+
+    void Update()
+    {
+        if (GameManager.Instance.state != GameState.Game)
+        {
+            return;
+        }
+
+        float transformFactor = transformSize / baseHealth;
+        float currentHeight = Mathf.Round(transform.position.y + transformSize * 10f) / 10f;
+        float nextHeight = Mathf.Round(transformFactor * (baseHealth + baseHealth - health) * 10f) / 10f;
+
+        if (currentHeight != nextHeight)
+        {
+            Vector3 newPos = new Vector3(transform.position.x,currentHeight - nextHeight, transform.position.z);
+            transform.position = newPos;
+        }
     }
     
     void OnTriggerEnter(Collider other)
@@ -41,7 +61,7 @@ public class CastleController : MonoBehaviour
             else
             {
                 Destroy(other.gameObject);
-                Destroy(gameObject);
+                // Destroy(gameObject);
 
                 if (isMyCastle)
                 {
@@ -67,7 +87,6 @@ public class CastleController : MonoBehaviour
         {
             castles[index].SetActive(true);
         }
-
     }
 
     public void SetCastleParams(int health, bool isMyCastle, string enemyTag)
@@ -75,6 +94,8 @@ public class CastleController : MonoBehaviour
         this.health = health;
         this.isMyCastle = isMyCastle;
         this.enemyTag = enemyTag;
+
+        this.baseHealth = health;
     }
 
     public void SetCastleParams(int health, bool isMyCastle, string enemyTag, int index)
@@ -83,6 +104,23 @@ public class CastleController : MonoBehaviour
         this.isMyCastle = isMyCastle;
         this.enemyTag = enemyTag;
 
+        this.baseHealth = health;
+
         SetCastleSkin(index);
+    }
+
+    public void SetCastleHealth(int health)
+    {
+        this.health = health;
+    }
+
+    public void SetCastleMaterial(Material lightMaterial, Material darkMaterial)
+    {
+        Material[] m = new Material[] {lightMaterial, darkMaterial};
+
+        foreach (GameObject go in castles)
+        {
+            go.GetComponent<Renderer>().materials = m;
+        }
     }
 }

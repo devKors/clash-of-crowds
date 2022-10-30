@@ -55,6 +55,15 @@ public class LobbyMenu : MonoBehaviour
     {
         OnPressHandler(SerializableFields.TowerHealth, towerHealthLabelLevel, towerHealthLabelPrice);
         UpdateButtonState();
+
+        CastleController opponentCastleController = GameObject.FindWithTag("OpponentCastle").GetComponent<CastleController>();
+        CastleController playerCastleController = GameObject.FindWithTag("PlayerCastle").GetComponent<CastleController>();
+
+        int towerHealth = PlayerPrefs.GetInt(SerializableFields.TowerHealth, 0);
+
+        int additionalHealth = Random.Range(-2, 2);
+
+        playerCastleController.SetCastleHealth(10 + towerHealth);
     }
 
     public void UpNumberOfItems()

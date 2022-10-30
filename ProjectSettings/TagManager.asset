@@ -27,6 +27,12 @@ TagManager:
   - OpponentUnit
   - PlayerCrowd
   - OpponentCrowd
+  - Floor
+  - Buildings
+  - Platform
+  - PlatformStand
+  - OpponentPlane
+  - PlayerPlane
   layers:
   - Default
   - TransparentFX
