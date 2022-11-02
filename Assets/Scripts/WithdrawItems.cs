@@ -41,7 +41,7 @@ public class WithdrawItems : MonoBehaviour
                         withdrawCoroutine = WithdrawItemsCoroutine(stackItems);
                         StartCoroutine(withdrawCoroutine);
                     }
-                    
+
             }
         }
     }
@@ -82,13 +82,14 @@ public class WithdrawItems : MonoBehaviour
         item.SetParent(transform);
 
         Sequence sequence = DOTween.Sequence();
-        sequence.Append(item.DOLocalJump(new Vector3(0, 0.5f, 0), jumpPower, 1, animationDuration));
+        sequence.Append(item.DOLocalJump(new Vector3(2.5f, 0.5f, 0), jumpPower, 1, animationDuration));
         // TODO: USE QUATERNION;
         sequence.Join(item.DOLocalRotate(Vector3.zero, animationDuration)).OnComplete(
             () => {
 
-                    item.localPosition = new Vector3(0, 0.5f, 0);
-                    item.localRotation = Quaternion.identity;
+                    // item.localPosition = new Vector3(0, 0.5f, 0);
+                    // item.localRotation = Quaternion.identity;
+                    Destroy(item.gameObject);
 
                     crowdSpawner.InstantiateUnitToCrowd(material);
             }

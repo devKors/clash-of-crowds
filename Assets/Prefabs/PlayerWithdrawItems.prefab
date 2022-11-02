@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4006912531926708405}
   - component: {fileID: 4006912531926708404}
-  - component: {fileID: 4006912531926708403}
+  - component: {fileID: 5389794294109260157}
   m_Layer: 0
   m_Name: PlayerWithdrawItems
   m_TagString: BlueWithdrawItems
@@ -51,8 +51,8 @@ MonoBehaviour:
   character: {fileID: 1698945244800102197, guid: a534ff8db3c3044ba9fc52f1a7a42da3, type: 3}
   crowdSpawnerGO: {fileID: 3849834615020890899, guid: 85505b3dc8ffd413e88effab2ad2fa0b, type: 3}
   isSpawning: 0
---- !u!135 &4006912531926708403
-SphereCollider:
+--- !u!65 &5389794294109260157
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -62,5 +62,5 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 3
+  m_Size: {x: 1.818626, y: 1.818626, z: 1.818626}
   m_Center: {x: 0, y: 0, z: 0}

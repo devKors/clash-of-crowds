@@ -17,8 +17,11 @@ public class LevelManager : MonoBehaviour
     public GameObject opponentPrefab;
     public Material[] lightMaterials;
     public Material[] darkMaterials;
+    public Material[] outlinedMaterials;
     private List<GameObject> instances;
     private int materialIndex = 0;
+    private int playerMaterialIndex = 5;
+    private int level = 0;
 
 
     void Awake()
@@ -31,7 +34,8 @@ public class LevelManager : MonoBehaviour
     {
         yield return new WaitForEndOfFrame();
 
-        materialIndex = Random.Range(0, lightMaterials.Length);
+        materialIndex = 4;
+        // materialIndex = Random.Range(0, lightMaterials.Length);
         InstantiateMap();
         InstantiateDecorations();
         InstantiateCastles();
@@ -72,31 +76,34 @@ public class LevelManager : MonoBehaviour
 
     private void InstantiateMap()
     {
-        GameObject mapInstance = Instantiate(levels[0].map, Vector3.zero, Quaternion.Euler(0, -90, 0));
+        GameObject mapInstance = Instantiate(levels[level].map, Vector3.zero, Quaternion.Euler(0, -90, 0));
         GameObject opponentPlane = GameObject.FindWithTag("OpponentPlane");
-        opponentPlane.GetComponent<Renderer>().material = darkMaterials[materialIndex];
+        opponentPlane.GetComponent<Renderer>().material = outlinedMaterials[materialIndex];
+
+        GameObject playerPlane = GameObject.FindWithTag("PlayerPlane");
+        playerPlane.GetComponent<Renderer>().material = outlinedMaterials[playerMaterialIndex];
 
         instances.Add(mapInstance);
     }
 
     private void InstantiateDecorations()
     {
-        GameObject decorationInstance = Instantiate(levels[0].decoration, Vector3.zero, Quaternion.Euler(0, 0, 0));
+        GameObject decorationInstance = Instantiate(levels[level].decoration, Vector3.zero, Quaternion.Euler(0, 0, 0));
         GameObject[] buildings = GameObject.FindGameObjectsWithTag("Buildings");
+        // GameObject platformStand = GameObject.FindWithTag("PlatformStand");
         GameObject platform = GameObject.FindWithTag("Platform");
-        GameObject platformStand = GameObject.FindWithTag("PlatformStand");
         GameObject floor = GameObject.FindWithTag("Floor");
 
-        platform.GetComponent<Renderer>().material = levels[0].mapPlatformMaterial;
-        platformStand.GetComponent<Renderer>().material = levels[0].mapStandMaterial;
-        floor.GetComponent<Renderer>().material = levels[0].decorationFloorMaterial;
+        platform.GetComponent<Renderer>().material = levels[level].mapPlatformMaterial;
+        floor.GetComponent<Renderer>().material = levels[level].decorationFloorMaterial;
 
+        // platformStand.GetComponent<Renderer>().material = levels[level].mapStandMaterial;
         foreach (GameObject building in buildings)
         {
-            building.GetComponent<Renderer>().material = levels[0].decorationBuildingsMaterial;
+            building.GetComponent<Renderer>().material = levels[level].decorationBuildingsMaterial;
         }
 
-        RenderSettings.fogColor = levels[0].fogColor;
+        RenderSettings.fogColor = levels[level].fogColor;
 
         instances.Add(decorationInstance);
     }
@@ -120,9 +127,11 @@ public class LevelManager : MonoBehaviour
         int additionalHealth = Random.Range(-2, 2);
 
         opponentCastleController.SetCastleParams(10 + towerHealth + additionalHealth, false, "PlayerUnit", 2);
-        opponentCastleController.SetCastleMaterial(lightMaterials[materialIndex], darkMaterials[materialIndex]);
+        opponentCastleController.SetCastleMaterial(outlinedMaterials[materialIndex], outlinedMaterials[materialIndex]);
 
         playerCastleController.SetCastleParams(10 + towerHealth, true, "OpponentUnit", 2);
+        playerCastleController.SetCastleMaterial(outlinedMaterials[playerMaterialIndex], outlinedMaterials[playerMaterialIndex]);
+
     }
 
     private void InstantiateUnitSpawners()
@@ -142,11 +151,25 @@ public class LevelManager : MonoBehaviour
         GameObject opponentCastleCoords = GameObject.Find("OpponentCastleCoords");
         GameObject playerCastleCoords = GameObject.Find("PlayerCastleCoords");
 
-        GameObject opponentWithdrawZone = Instantiate(opponentWithdrawZonePrefab, opponentCastleCoords.transform.position, Quaternion.identity);
-        GameObject playerWithdrawZone = Instantiate(playerWithdrawZonePrefab, playerCastleCoords.transform.position, Quaternion.identity);
+        Vector3 opponentCastlePosition = opponentCastleCoords.transform.position;
+        GameObject opponentWithdrawZone = Instantiate(
+            opponentWithdrawZonePrefab,
+            new Vector3(-2.5f, opponentCastlePosition.y, opponentCastlePosition.z),
+            Quaternion.identity
+        );
+
+        Vector3 playerCastlePosition = playerCastleCoords.transform.position;
+        GameObject playerWithdrawZone = Instantiate(
+            playerWithdrawZonePrefab,
+            new Vector3(-2.5f, playerCastlePosition.y, playerCastlePosition.z),
+            Quaternion.identity
+        );
 
         WithdrawItems opponentWithdrawZoneController = opponentWithdrawZone.GetComponent<WithdrawItems>();
-        opponentWithdrawZoneController.SetMaterial(lightMaterials[materialIndex]);
+        opponentWithdrawZoneController.SetMaterial(outlinedMaterials[materialIndex]);
+
+        WithdrawItems playerWithdrawZoneController = playerWithdrawZone.GetComponent<WithdrawItems>();
+        playerWithdrawZoneController.SetMaterial(outlinedMaterials[playerMaterialIndex]);
 
         instances.Add(opponentWithdrawZone);
         instances.Add(playerWithdrawZone);
@@ -161,7 +184,10 @@ public class LevelManager : MonoBehaviour
         GameObject opponentContainer = Instantiate(opponentPrefab, opponentCoords.transform.position, Quaternion.identity);
 
         OpponentAIController opponentAIController = opponentContainer.GetComponent<OpponentAIController>();
-        opponentAIController.SetOpponentMaterial(lightMaterials[materialIndex]);
+        opponentAIController.SetOpponentMaterial(outlinedMaterials[materialIndex]);
+
+        PlayerController playerController = playerContainer.GetComponent<PlayerController>();
+        playerController.SetPlayerMaterial(outlinedMaterials[playerMaterialIndex]);
 
         instances.Add(playerContainer);
         instances.Add(opponentContainer);
@@ -169,10 +195,11 @@ public class LevelManager : MonoBehaviour
 
     private void InstantiateBlockSpawner()
     {
-        GameObject blockSpawnerInstance = Instantiate(levels[0].stackableBoxSpawners);
+        GameObject blockSpawnerInstance = Instantiate(levels[level].stackableBoxSpawners);
         StackableBoxSpawnerController stackableBoxSpawnerController = blockSpawnerInstance.GetComponent<StackableBoxSpawnerController>();
 
-        stackableBoxSpawnerController.SetOpponentMaterial(lightMaterials[materialIndex]);
+        stackableBoxSpawnerController.SetOpponentMaterial(outlinedMaterials[materialIndex]);
+        stackableBoxSpawnerController.SetPlayerMaterial(outlinedMaterials[playerMaterialIndex]);
         instances.Add(blockSpawnerInstance);
 
     }

@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 821819193c34b4db895033ea5c9bdc2b, type: 3}
   m_Name: Level
   m_EditorClassIdentifier: 
-  map: {fileID: 2910229309417305730, guid: 0199c52e7e4c24db6b2780404e7a7f3f, type: 3}
-  mapPlatformMaterial: {fileID: 2100000, guid: fe0dd684e3c5d4d0c9e1238c3545ca2c, type: 2}
-  mapStandMaterial: {fileID: 2100000, guid: 7a576406fac7c445ab9a6a2441b28726, type: 2}
-  decoration: {fileID: 2658837281215881951, guid: 2685e1aac31d04425b4f876ee3ee1ad2, type: 3}
-  decorationBuildingsMaterial: {fileID: 2100000, guid: 4b7f4e7a1ae0945f597e0dc0e6f19591, type: 2}
-  decorationFloorMaterial: {fileID: 2100000, guid: ba932a1e3e09a48a39b502fe8dacca01, type: 2}
-  fogColor: {r: 0.7932396, g: 0.9811321, b: 0, a: 0}
+  map: {fileID: 2689167979603935965, guid: 3e5e9bebb4c7647eaa97da1f00b0a539, type: 3}
+  mapPlatformMaterial: {fileID: 2100000, guid: 09c916e6de3994f37916f6a50208c04e, type: 2}
+  mapStandMaterial: {fileID: 2100000, guid: 09c916e6de3994f37916f6a50208c04e, type: 2}
+  decoration: {fileID: 448857872121881512, guid: 82cf351583115427491dc8d72b1f9614, type: 3}
+  decorationBuildingsMaterial: {fileID: 2100000, guid: 3c21c69520e1b4284881acf0868e64ac, type: 2}
+  decorationFloorMaterial: {fileID: 2100000, guid: 09c916e6de3994f37916f6a50208c04e, type: 2}
+  fogColor: {r: 0.50980395, g: 0.8352942, b: 1, a: 0}
   stackableBoxSpawners: {fileID: 6114545054547460330, guid: 886e23550d0af48ec8d53fcc6b868bd9, type: 3}

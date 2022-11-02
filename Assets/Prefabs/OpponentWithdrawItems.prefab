@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2644745320033604204}
   - component: {fileID: 2644745320033604205}
-  - component: {fileID: 2644745320033604206}
+  - component: {fileID: 7421549556665294480}
   m_Layer: 0
   m_Name: OpponentWithdrawItems
   m_TagString: RedWithdrawItems
@@ -51,8 +51,8 @@ MonoBehaviour:
   character: {fileID: 3016261443498136287, guid: f66ff1321d1eb478d8bb41d28373beda, type: 3}
   crowdSpawnerGO: {fileID: 3849834615020890899, guid: 70142a1f561d8400fa2d79654200256d, type: 3}
   isSpawning: 0
---- !u!135 &2644745320033604206
-SphereCollider:
+--- !u!65 &7421549556665294480
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -62,5 +62,5 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1
+  m_Size: {x: 1.818626, y: 1.818626, z: 1.818626}
   m_Center: {x: 0, y: 0, z: 0}

@@ -119,5 +119,12 @@ public class PlayerController : MonoBehaviour
             characterIndex = index;
         }
     }
+    public void SetPlayerMaterial(Material material)
+    {
+        foreach (GameObject go in characters)
+        {
+            go.GetComponentInChildren<Renderer>().material = material;
+        }
+    }
 }
 
