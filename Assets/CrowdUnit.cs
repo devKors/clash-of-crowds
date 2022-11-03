@@ -10,20 +10,19 @@ public class CrowdUnit : MonoBehaviour
     {
          if (collision.gameObject.CompareTag(enemyUnit.tag))
          {
-            if (collision != null && collision.gameObject != null && gameObject != null)
+            if (gameObject != null && collision.gameObject != null && gameObject.activeSelf && collision.gameObject.activeSelf)
             {
-
                 GameObject crowdGO = collision.gameObject.transform.parent.gameObject;
                 CrowdController crowdController = crowdGO.GetComponent<CrowdController>();
 
-                if (gameObject.CompareTag("PlayerUnit"))
-                {
-                    Destroy(collision.gameObject);            
-                    Destroy(gameObject);
-                }
-
                 IEnumerator formingCoroutine = SetIsForming(crowdController);
                 StartCoroutine(formingCoroutine);
+  
+                gameObject.SetActive(false);
+                collision.gameObject.SetActive(false);
+
+                Destroy(gameObject);
+                Destroy(collision.gameObject);
             }
          }
     }

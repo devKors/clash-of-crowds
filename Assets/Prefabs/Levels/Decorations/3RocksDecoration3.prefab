@@ -151,6 +151,7 @@ GameObject:
   - component: {fileID: 7615856367328516908}
   - component: {fileID: 6836175673351749396}
   - component: {fileID: 5060585776690046499}
+  - component: {fileID: 8127780627673843572}
   m_Layer: 0
   m_Name: Side-Cliff (2)
   m_TagString: Buildings
@@ -223,6 +224,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &8127780627673843572
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2490768800672082280}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.2285748, y: 6.1694674, z: 15.189135}
+  m_Center: {x: -0.8176284, y: 3.0847337, z: -0.07871246}
 --- !u!1 &4179376553338800623
 GameObject:
   m_ObjectHideFlags: 0
@@ -234,6 +248,7 @@ GameObject:
   - component: {fileID: 167134306368891976}
   - component: {fileID: 2007389375019337957}
   - component: {fileID: 3713296212067985774}
+  - component: {fileID: 873170033620262355}
   m_Layer: 0
   m_Name: Side-Cliff (4)
   m_TagString: Buildings
@@ -306,6 +321,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &873170033620262355
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4179376553338800623}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.2285748, y: 6.1694674, z: 15.189135}
+  m_Center: {x: -0.8176284, y: 3.0847337, z: -0.07871246}
 --- !u!1 &5036355449920704315
 GameObject:
   m_ObjectHideFlags: 0
@@ -419,6 +447,7 @@ GameObject:
   - component: {fileID: 3772007597811919175}
   - component: {fileID: 3877034318009928759}
   - component: {fileID: 5203373049046220072}
+  - component: {fileID: 643524629205099243}
   m_Layer: 0
   m_Name: Baked_Rock_Front (2)
   m_TagString: Buildings
@@ -491,6 +520,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &643524629205099243
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5581295665622158824}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10.530495, y: 6.1694674, z: 3.2285733}
+  m_Center: {x: -0.2776153, y: 3.0847337, z: -0.8176301}
 --- !u!1 &7237469884022388744
 GameObject:
   m_ObjectHideFlags: 0
@@ -502,6 +544,7 @@ GameObject:
   - component: {fileID: 8394083100759709475}
   - component: {fileID: 6535238095429048970}
   - component: {fileID: 3094341946986289321}
+  - component: {fileID: 6917201389070621743}
   m_Layer: 0
   m_Name: Baked_Rock_Front
   m_TagString: Buildings
@@ -574,6 +617,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &6917201389070621743
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7237469884022388744}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10.530495, y: 6.1694674, z: 3.2285733}
+  m_Center: {x: -0.2776153, y: 3.0847337, z: -0.8176301}
 --- !u!1 &7454574521052421161
 GameObject:
   m_ObjectHideFlags: 0
@@ -585,6 +641,7 @@ GameObject:
   - component: {fileID: 5128714619049063065}
   - component: {fileID: 2742369493501590266}
   - component: {fileID: 7988465643638660373}
+  - component: {fileID: 5726986599381190337}
   m_Layer: 0
   m_Name: Baked_Rock_Front (1)
   m_TagString: Buildings
@@ -657,6 +714,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &5726986599381190337
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7454574521052421161}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10.530495, y: 6.1694674, z: 3.2285733}
+  m_Center: {x: -0.2776153, y: 3.0847337, z: -0.8176301}
 --- !u!1 &7912081264227762170
 GameObject:
   m_ObjectHideFlags: 0
@@ -668,6 +738,7 @@ GameObject:
   - component: {fileID: 2807494048771939591}
   - component: {fileID: 7567931436553043262}
   - component: {fileID: 1686549992810616966}
+  - component: {fileID: 1725241605262465398}
   m_Layer: 0
   m_Name: Side-Cliff (6)
   m_TagString: Buildings
@@ -740,6 +811,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1725241605262465398
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7912081264227762170}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.2285748, y: 6.1694674, z: 15.189135}
+  m_Center: {x: -0.8176284, y: 3.0847337, z: -0.07871246}
 --- !u!1 &8384332935962231402
 GameObject:
   m_ObjectHideFlags: 0
@@ -751,6 +835,7 @@ GameObject:
   - component: {fileID: 7938772326827101006}
   - component: {fileID: 62598190802699930}
   - component: {fileID: 88117986240304325}
+  - component: {fileID: 190386466024854048}
   m_Layer: 0
   m_Name: Baked_Rock_Front (3)
   m_TagString: Buildings
@@ -823,6 +908,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &190386466024854048
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8384332935962231402}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10.530495, y: 6.1694674, z: 3.2285733}
+  m_Center: {x: -0.2776153, y: 3.0847337, z: -0.8176301}
 --- !u!1 &8735192719124880279
 GameObject:
   m_ObjectHideFlags: 0
@@ -1083,6 +1181,7 @@ GameObject:
   - component: {fileID: 5821088197059598402}
   - component: {fileID: 4206387811103107261}
   - component: {fileID: 1283146255617313291}
+  - component: {fileID: 4343321250460152004}
   m_Layer: 0
   m_Name: Side-Cliff (1)
   m_TagString: Buildings
@@ -1155,3 +1254,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &4343321250460152004
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9069417914525064191}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.2285748, y: 6.1694674, z: 15.189135}
+  m_Center: {x: -0.8176284, y: 3.0847337, z: -0.07871246}

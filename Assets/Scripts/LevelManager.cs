@@ -20,8 +20,8 @@ public class LevelManager : MonoBehaviour
     public Material[] outlinedMaterials;
     private List<GameObject> instances;
     private int materialIndex = 0;
-    private int playerMaterialIndex = 5;
-    private int level = 19;
+    private int playerMaterialIndex = 0;
+    private int level = 0;
 
 
     void Awake()
@@ -34,8 +34,9 @@ public class LevelManager : MonoBehaviour
     {
         yield return new WaitForEndOfFrame();
 
-        materialIndex = 4;
-        // materialIndex = Random.Range(0, lightMaterials.Length);
+        int currentLevel = PlayerPrefs.GetInt(SerializableFields.Level, 0);
+        level =  currentLevel % levels.Length;
+        materialIndex = Random.Range(1, outlinedMaterials.Length);
         InstantiateMap();
         InstantiateDecorations();
         InstantiateCastles();
