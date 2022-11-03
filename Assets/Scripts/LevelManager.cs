@@ -21,7 +21,7 @@ public class LevelManager : MonoBehaviour
     private List<GameObject> instances;
     private int materialIndex = 0;
     private int playerMaterialIndex = 5;
-    private int level = 0;
+    private int level = 19;
 
 
     void Awake()

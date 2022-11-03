@@ -342,7 +342,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2887749279866977171}
   m_Layer: 0
-  m_Name: Decoration2
+  m_Name: 2RocksDecoration2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

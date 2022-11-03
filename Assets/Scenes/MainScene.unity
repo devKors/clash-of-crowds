@@ -4015,6 +4015,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levels:
   - {fileID: 11400000, guid: 5d7c42a3cb23a4ec291abfee4bbadad8, type: 2}
+  - {fileID: 11400000, guid: 5d7c42a3cb23a4ec291abfee4bbadad8, type: 2}
+  - {fileID: 11400000, guid: 5d7c42a3cb23a4ec291abfee4bbadad8, type: 2}
+  - {fileID: 11400000, guid: 206be70431dda44adb41f785aa5a237e, type: 2}
+  - {fileID: 11400000, guid: 206be70431dda44adb41f785aa5a237e, type: 2}
+  - {fileID: 11400000, guid: 206be70431dda44adb41f785aa5a237e, type: 2}
+  - {fileID: 11400000, guid: 64ff4a9e9c25949f3a831933c01df202, type: 2}
+  - {fileID: 11400000, guid: 64ff4a9e9c25949f3a831933c01df202, type: 2}
+  - {fileID: 11400000, guid: 64ff4a9e9c25949f3a831933c01df202, type: 2}
+  - {fileID: 11400000, guid: afa1a5e35a8a540c8961a385dac263dd, type: 2}
+  - {fileID: 11400000, guid: afa1a5e35a8a540c8961a385dac263dd, type: 2}
+  - {fileID: 11400000, guid: afa1a5e35a8a540c8961a385dac263dd, type: 2}
+  - {fileID: 11400000, guid: fef32b0f7e6ba4cc1bb0e18773627ace, type: 2}
+  - {fileID: 11400000, guid: fef32b0f7e6ba4cc1bb0e18773627ace, type: 2}
+  - {fileID: 11400000, guid: fef32b0f7e6ba4cc1bb0e18773627ace, type: 2}
   opponentCastleContainerPrefab: {fileID: 1507831047749668121, guid: fa6419023c20b4d0095ace5f41402b13, type: 3}
   playerCastleContainerPrefab: {fileID: 8536210006234044697, guid: 3b55c84f225d24120856b38d28475cf7, type: 3}
   opponentUnitSpawnerPrefab: {fileID: 3849834615020890899, guid: 70142a1f561d8400fa2d79654200256d, type: 3}
