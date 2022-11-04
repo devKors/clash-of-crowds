@@ -6,6 +6,18 @@ public class CrowdUnit : MonoBehaviour
     [SerializeField]
     private GameObject enemyUnit;
 
+    void Update()
+    {
+        Transform child = transform.GetChild(0);
+        if (transform.tag == "PlayerUnit")
+        {
+            child.LookAt(new Vector3(0, 0, 10));
+        }
+        else
+        {
+            child.LookAt(new Vector3(0, 0, -10));
+        }
+    }
     void OnCollisionEnter(Collision collision)
     {
          if (collision.gameObject.CompareTag(enemyUnit.tag))
