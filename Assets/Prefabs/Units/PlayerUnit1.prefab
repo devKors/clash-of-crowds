@@ -78,6 +78,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyUnit: {fileID: 7356799158705038585, guid: 59f3a3e47aa4042b8a42d503f8ce27ff, type: 3}
+  particle: {fileID: 4553287630450876385, guid: 15483e51212e3d74886ea57291f4639a, type: 3}
 --- !u!1001 &6058771784033991986
 PrefabInstance:
   m_ObjectHideFlags: 0

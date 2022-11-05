@@ -5,6 +5,14 @@ public class CrowdUnit : MonoBehaviour
 {
     [SerializeField]
     private GameObject enemyUnit;
+    public GameObject particle;
+
+    void Start()
+    {
+        Material m = transform.GetComponentInChildren<Renderer>().material;
+        ParticleSystem.MainModule settings = particle.GetComponent<ParticleSystem>().main;
+        settings.startColor = new ParticleSystem.MinMaxGradient(m.color);
+    }
 
     void Update()
     {
@@ -33,8 +41,12 @@ public class CrowdUnit : MonoBehaviour
                 gameObject.SetActive(false);
                 collision.gameObject.SetActive(false);
 
+                Vector3 position = new Vector3(gameObject.transform.position.x, 1f, gameObject.transform.position.z);
+
                 Destroy(gameObject);
                 Destroy(collision.gameObject);
+
+                Instantiate(particle, position, Quaternion.identity);
             }
          }
     }

@@ -12,6 +12,8 @@ public class CastleController : MonoBehaviour
     private GameObject[] castles;
     public GameObject healthBar;
     private float transformSize = 1.5f;
+    public GameObject particle;
+    private bool canMakeBang = true;
 
     void Awake()
     {
@@ -57,6 +59,12 @@ public class CastleController : MonoBehaviour
             if (--health != 0)
             {
                 Destroy(other.gameObject);
+                if (canMakeBang)
+                {
+                    canMakeBang = false;
+                    StartCoroutine(AnimateBang());
+                }
+                
             }
             else
             {
@@ -122,5 +130,13 @@ public class CastleController : MonoBehaviour
         {
             go.GetComponent<Renderer>().materials = m;
         }
+    }
+
+    private IEnumerator AnimateBang()
+    {
+        Vector3 position = new Vector3(transform.position.x, 0, transform.position.z);
+        Instantiate(particle, position, Quaternion.identity);
+        yield return new WaitForSeconds(0.3f);
+        canMakeBang = true;
     }
 }

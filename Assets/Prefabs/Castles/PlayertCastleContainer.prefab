@@ -8665,6 +8665,7 @@ MonoBehaviour:
   health: 0
   enemyTag: OpponentUnit
   healthBar: {fileID: 407143339527180401, guid: b6fac2cd8fcba484fa7234775cf0c975, type: 3}
+  particle: {fileID: 141433446842962269, guid: 9fe8f8b3288e45a44af36ff8aa04486e, type: 3}
 --- !u!65 &2595033286160055258
 BoxCollider:
   m_ObjectHideFlags: 0
