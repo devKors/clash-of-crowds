@@ -123,6 +123,10 @@ public class LobbyMenu : MonoBehaviour
         Color moneyMultiplyerColor = moneyMultiplyerCoin.color;
         moneyMultiplyerColor.a = ((moneyMultiplyer + 1) * GlobalConstants.IncreaseStep <= coins) ? 255f : 0.2f;
         moneyMultiplyerCoin.color = moneyMultiplyerColor;
+    }
 
+    public void OnStartGame()
+    {
+        GameManager.Instance.SetGameState(GameState.Game);
     }
 }

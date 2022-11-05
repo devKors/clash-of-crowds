@@ -84,18 +84,13 @@ public class PlayerController : MonoBehaviour
     private void JoystickExecuted(FingersJoystickScript script, Vector2 amount)
     {
 
-        if (GameManager.Instance.state == GameState.Lose || GameManager.Instance.state == GameState.Victory)
+        if (GameManager.Instance.state == GameState.Lose || GameManager.Instance.state == GameState.Victory || GameManager.Instance.state == GameState.Lobby)
         {
             return;
         }
 
         if (amount != Vector2.zero)
         {
-            if (GameManager.Instance.state == GameState.Lobby)
-            {
-                GameManager.Instance.SetGameState(GameState.Game);
-            }
-
             MoveCharacter(new Vector3(amount.x, 0, amount.y));
             RotateCharacter(new Vector3(amount.x, 0, amount.y));
             characterAnimator.SetBool("isMoving", true);
