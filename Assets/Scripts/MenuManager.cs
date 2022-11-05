@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public enum Menu
@@ -29,6 +30,33 @@ public class MenuManager : MonoBehaviour
 
     public void ToggleMenu(Menu menu, bool value)
     {
+        switch (menu)
+        {
+            case Menu.LobbyMenu:
+                lobbyMenu.SetActive(value);
+                break;
+            case Menu.GameMenu:
+                gameMenu.SetActive(value);
+                break;
+            case Menu.VictoryMenu:
+                victoryMenu.SetActive(value);
+                break;
+            case Menu.LoseMenu:
+                loseMenu.SetActive(value);
+                break;
+            default:
+                break;
+        }
+    }
+
+    public void ToggleMenu(Menu menu, bool value, float delay)
+    {
+        StartCoroutine(ToggleRoutine(menu, value, delay));
+    }
+
+    private IEnumerator ToggleRoutine(Menu menu, bool value, float delay)
+    {
+        yield return new WaitForSeconds(delay);
         switch (menu)
         {
             case Menu.LobbyMenu:

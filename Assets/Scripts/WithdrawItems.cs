@@ -28,6 +28,11 @@ public class WithdrawItems : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (GameManager.Instance.state != GameState.Game)
+        {
+            return;
+        }
+
         if (other.CompareTag(character.tag))
         {
             StackItems stackItems;

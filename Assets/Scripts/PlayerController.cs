@@ -47,6 +47,17 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         GravityHandler();
+
+        if (GameManager.Instance.state == GameState.Victory)
+        {
+            characterAnimator.SetBool("isMoving", false);
+            characterAnimator.SetBool("isDancing", true);
+        }
+        else if (GameManager.Instance.state == GameState.Lose)
+        {
+            characterAnimator.SetBool("isMoving", false);
+            characterAnimator.SetBool("isDefeated", true);
+        }
     }
 
     private void GravityHandler()
@@ -83,7 +94,6 @@ public class PlayerController : MonoBehaviour
 
     private void JoystickExecuted(FingersJoystickScript script, Vector2 amount)
     {
-
         if (GameManager.Instance.state == GameState.Lose || GameManager.Instance.state == GameState.Victory || GameManager.Instance.state == GameState.Lobby)
         {
             return;

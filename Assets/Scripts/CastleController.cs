@@ -13,6 +13,7 @@ public class CastleController : MonoBehaviour
     public GameObject healthBar;
     private float transformSize = 1.5f;
     public GameObject particle;
+    public GameObject destructionParticle;
     private bool canMakeBang = true;
 
     void Awake()
@@ -69,7 +70,9 @@ public class CastleController : MonoBehaviour
             else
             {
                 Destroy(other.gameObject);
-                // Destroy(gameObject);
+                AnimateDestruction();
+                Vector3 newPos = new Vector3(transform.position.x, -20, transform.position.z);
+                transform.position = newPos;
 
                 if (isMyCastle)
                 {
@@ -138,5 +141,11 @@ public class CastleController : MonoBehaviour
         Instantiate(particle, position, Quaternion.identity);
         yield return new WaitForSeconds(0.3f);
         canMakeBang = true;
+    }
+
+    private void AnimateDestruction()
+    {
+        Vector3 position = new Vector3(transform.position.x, 0, transform.position.z);
+        Instantiate(destructionParticle, position, Quaternion.identity);
     }
 }

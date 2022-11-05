@@ -14,6 +14,7 @@ public class CameraController : MonoBehaviour
     private Quaternion rotationQuaternion;
     [SerializeField]
     private Vector3 positionVector;
+    private Transform characterTransform;
 
     void Awake()
     {
@@ -23,8 +24,16 @@ public class CameraController : MonoBehaviour
     void Update()
     {
         SetCharacter();
+
+        if (GameManager.Instance.state == GameState.Lose || GameManager.Instance.state == GameState.Victory)
+        {
+            CameraMoveAroundCharacter();
+        }
+        else
+        {
+            CameraMove();
+        }
         
-        CameraMove();
     }
 
     private void CameraMove()
@@ -34,6 +43,15 @@ public class CameraController : MonoBehaviour
             currentVector = new Vector3(character.transform.position.x - positionVector.x, character.transform.position.y + height, character.transform.position.z - rearDistance);
             transform.position = Vector3.Lerp(transform.position, currentVector, returnSpeed * Time.deltaTime);
             transform.rotation = rotationQuaternion;
+        }
+    }
+
+    private void CameraMoveAroundCharacter()
+    {
+        if (character != null)
+        {
+            transform.LookAt(character.transform);
+            transform.Translate(Vector3.right * Time.deltaTime);
         }
     }
 

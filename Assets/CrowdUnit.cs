@@ -6,12 +6,18 @@ public class CrowdUnit : MonoBehaviour
     [SerializeField]
     private GameObject enemyUnit;
     public GameObject particle;
+    private Animator unitAnimator;
+
 
     void Start()
     {
         Material m = transform.GetComponentInChildren<Renderer>().material;
         ParticleSystem.MainModule settings = particle.GetComponent<ParticleSystem>().main;
         settings.startColor = new ParticleSystem.MinMaxGradient(m.color);
+
+        unitAnimator = transform.GetComponentInChildren<Animator>();
+        unitAnimator.SetBool("isMoving", true);
+
     }
 
     void Update()
@@ -25,6 +31,7 @@ public class CrowdUnit : MonoBehaviour
         {
             child.LookAt(new Vector3(0, 0, -10));
         }
+        HandleDance();
     }
     void OnCollisionEnter(Collision collision)
     {
@@ -56,5 +63,24 @@ public class CrowdUnit : MonoBehaviour
         crowdController.isForming = true;
         yield return new WaitForSeconds(0.5f);
         crowdController.isForming = false;
+    }
+
+    private void HandleDance()
+    {
+        if (GameManager.Instance.state != GameState.Game)
+        {
+            bool isPlayer = transform.tag == "PlayerUnit";
+
+            if (GameManager.Instance.state == GameState.Victory)
+            {
+                unitAnimator.SetBool("isMoving", false);
+                unitAnimator.SetBool(isPlayer ? "isDancing" : "isDefeated", true);
+            }
+            else if (GameManager.Instance.state == GameState.Lose)
+            {
+                unitAnimator.SetBool("isMoving", false);
+                unitAnimator.SetBool(isPlayer ? "isDefeated" : "isDancing", true);
+            }
+        }
     }
 }

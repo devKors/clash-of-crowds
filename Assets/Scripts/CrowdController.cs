@@ -21,6 +21,12 @@ public class CrowdController : MonoBehaviour
 
     void FixedUpdate()
     {
+
+        if (GameManager.Instance.state != GameState.Game)
+        {
+            return;
+        }
+        
         if (!withdrawItems.isSpawning)
         {
             canRun = true;

@@ -15,17 +15,25 @@ public class Billboard : MonoBehaviour
 
     void LateUpdate()
     {
-        count = transform.parent.gameObject.transform.childCount - 1;
-        if (count > 0)
+        if (GameManager.Instance.state == GameState.Game)
         {
-            counter.enabled = true;
-            counter.text = $"{count}";
+            count = transform.parent.gameObject.transform.childCount - 1;
+            if (count > 0)
+            {
+                counter.gameObject.SetActive(true);
+                counter.text = $"{count}";
+            }
+            else
+            {
+                counter.gameObject.SetActive(false);
+            }
+
+            transform.LookAt(transform.position + new Vector3(cam.forward.x, cam.forward.y, cam.forward.z));
         }
         else
         {
-            counter.enabled = false;
+            counter.gameObject.SetActive(false);
         }
         
-        transform.LookAt(transform.position + new Vector3(cam.forward.x, cam.forward.y, cam.forward.z));
     }
 }

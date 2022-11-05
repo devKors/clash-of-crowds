@@ -56,6 +56,7 @@ public class OpponentAIController : MonoBehaviour
         else if (GameManager.Instance.state == GameState.Lose || GameManager.Instance.state == GameState.Victory)
         {
             opponent.isStopped = true;
+            AnimateDance();
         }
     }
 
@@ -128,6 +129,20 @@ public class OpponentAIController : MonoBehaviour
         else 
         {
             opponentAnimator.SetBool("isMoving", false);
+        }
+    }
+
+    private void AnimateDance()
+    {
+        if (GameManager.Instance.state == GameState.Victory)
+        {
+            opponentAnimator.SetBool("isMoving", false);
+            opponentAnimator.SetBool("isDefeated", true);
+        }
+        else if (GameManager.Instance.state == GameState.Lose)
+        {
+            opponentAnimator.SetBool("isMoving", false);
+            opponentAnimator.SetBool("isDancing", true);
         }
     }
 

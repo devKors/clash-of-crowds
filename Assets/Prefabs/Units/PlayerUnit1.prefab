@@ -149,7 +149,7 @@ PrefabInstance:
     - target: {fileID: 5866666021909216657, guid: df58341eeaedf4ba5b295a7569a7b750, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 430b5253a22794649b32f8d46bb77544, type: 2}
+      objectReference: {fileID: 9100000, guid: c1bbabe90f1fd4f0ea42b8a33ade2cb6, type: 2}
     - target: {fileID: 7494697207311925452, guid: df58341eeaedf4ba5b295a7569a7b750, type: 3}
       propertyPath: m_Mesh
       value: 
