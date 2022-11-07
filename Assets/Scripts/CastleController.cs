@@ -15,6 +15,7 @@ public class CastleController : MonoBehaviour
     public GameObject particle;
     public GameObject destructionParticle;
     private bool canMakeBang = true;
+    private Transform arch;
 
     void Awake()
     {
@@ -45,6 +46,14 @@ public class CastleController : MonoBehaviour
             transform.position = newPos;
         }
     }
+
+    void OnDestroy()
+    {
+        if (arch != null)
+        {
+            Destroy(arch.gameObject);
+        }
+    }
     
     void OnTriggerEnter(Collider other)
     {
@@ -71,6 +80,8 @@ public class CastleController : MonoBehaviour
                 AnimateDestruction();
                 Vector3 newPos = new Vector3(transform.position.x, -20, transform.position.z);
                 transform.position = newPos;
+                Destroy(arch.gameObject);
+
 
                 if (isMyCastle)
                 {
@@ -131,6 +142,14 @@ public class CastleController : MonoBehaviour
         {
             go.GetComponent<Renderer>().materials = m;
         }
+
+        Transform castleTransform = transform.GetChild(2);
+        Transform archTransform = castleTransform.GetChild(0);
+        archTransform.GetComponent<Renderer>().material = lightMaterial;
+
+        arch = Instantiate(archTransform, archTransform.position, Quaternion.identity);
+
+        Destroy(archTransform.gameObject);
     }
 
     public void SetCustleHealthBar(Material material)
