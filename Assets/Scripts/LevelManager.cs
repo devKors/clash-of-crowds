@@ -129,9 +129,11 @@ public class LevelManager : MonoBehaviour
 
         opponentCastleController.SetCastleParams(10 + towerHealth + additionalHealth, false, "PlayerUnit", 2);
         opponentCastleController.SetCastleMaterial(outlinedMaterials[materialIndex], outlinedMaterials[materialIndex]);
+        opponentCastleController.SetCustleHealthBar(outlinedMaterials[materialIndex]);
 
         playerCastleController.SetCastleParams(10 + towerHealth, true, "OpponentUnit", 2);
         playerCastleController.SetCastleMaterial(outlinedMaterials[playerMaterialIndex], outlinedMaterials[playerMaterialIndex]);
+        playerCastleController.SetCustleHealthBar(outlinedMaterials[playerMaterialIndex]);
 
     }
 

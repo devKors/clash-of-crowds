@@ -50,7 +50,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 0
   enemyTag: PlayerUnit
-  healthBar: {fileID: 407143339527180401, guid: b6fac2cd8fcba484fa7234775cf0c975, type: 3}
+  healthBar: {fileID: 1428416097266058598, guid: 4264674b1cc4844f0870531c1bdb26b8, type: 3}
   particle: {fileID: 141433446842962269, guid: 9fe8f8b3288e45a44af36ff8aa04486e, type: 3}
   destructionParticle: {fileID: 725748389856807714, guid: 4bda94453d2ca7444a0fff05b2d425f5, type: 3}
 --- !u!65 &4025664588372737586

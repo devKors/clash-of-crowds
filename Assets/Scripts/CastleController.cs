@@ -26,8 +26,6 @@ public class CastleController : MonoBehaviour
         }
 
         SetCastleSkin(0);
-
-        Instantiate(healthBar, transform);
     }
 
     void Update()
@@ -133,6 +131,13 @@ public class CastleController : MonoBehaviour
         {
             go.GetComponent<Renderer>().materials = m;
         }
+    }
+
+    public void SetCustleHealthBar(Material material)
+    {
+        GameObject hb = Instantiate(healthBar, transform);
+        BillBoardCastle controller = hb.GetComponent<BillBoardCastle>();
+        controller.SetCoverColor(material.color);
     }
 
     private IEnumerator AnimateBang()

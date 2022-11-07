@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class BillBoardCastle : MonoBehaviour
@@ -7,12 +8,19 @@ public class BillBoardCastle : MonoBehaviour
     private int count;
     public TextMeshProUGUI counter;
     private CastleController castleController;
+    [SerializeField]
+    private Image cover;
 
 
     void Awake()
     {
         cam = GameObject.FindGameObjectWithTag("MainCamera").transform;
         castleController = transform.parent.GetComponent<CastleController>();
+    }
+
+    public void SetCoverColor(Color color)
+    {
+        cover.color = color;
     }
 
     void LateUpdate()
