@@ -9,7 +9,8 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: Green
   m_Shader: {fileID: 4800000, guid: dd496457a855aa341b0d7b7b475a7a3a, type: 3}
-  m_ValidKeywords: []
+  m_ValidKeywords:
+  - TCP2_ZSMOOTH_ON
   m_InvalidKeywords:
   - OUTLINES
   m_LightmapFlags: 4
