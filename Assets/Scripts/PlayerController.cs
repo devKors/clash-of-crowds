@@ -19,6 +19,8 @@ public class PlayerController : MonoBehaviour
     private Animator characterAnimator;
     private GameObject[] characters;
     private int characterIndex;
+    [SerializeField]
+    private GameObject nicknameCanvas;
 
     private void Awake()
     {
@@ -130,6 +132,12 @@ public class PlayerController : MonoBehaviour
         {
             go.GetComponentInChildren<Renderer>().material = material;
         }
+    }
+
+    public void SetPlayerName(string name)
+    {
+        BillboardNickname nicknameController = Instantiate(nicknameCanvas, transform).GetComponent<BillboardNickname>();
+        nicknameController.SetText(name);
     }
 }
 

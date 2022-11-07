@@ -1202,6 +1202,7 @@ MonoBehaviour:
   maxBringItems: 12
   stackableBox: {fileID: 4356628179486231662, guid: b54704c0cbaa646a8879aa30203adfbe, type: 3}
   isSpawning: 0
+  nicknameCanvas: {fileID: 7834819890733148326, guid: 42fe62f0db1914187978684ebf9094de, type: 3}
 --- !u!195 &5530957546186153286
 NavMeshAgent:
   m_ObjectHideFlags: 0

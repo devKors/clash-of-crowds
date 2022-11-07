@@ -187,8 +187,13 @@ public class LevelManager : MonoBehaviour
         OpponentAIController opponentAIController = opponentContainer.GetComponent<OpponentAIController>();
         opponentAIController.SetOpponentMaterial(outlinedMaterials[materialIndex]);
 
+        int currentLevel = PlayerPrefs.GetInt(SerializableFields.Level, 0);
+        int nameIndex =  currentLevel % GlobalConstants.enemyNames.Length;
+        opponentAIController.SetPlayerName(GlobalConstants.enemyNames[nameIndex]);
+
         PlayerController playerController = playerContainer.GetComponent<PlayerController>();
         playerController.SetPlayerMaterial(outlinedMaterials[playerMaterialIndex]);
+        playerController.SetPlayerName("Player");
 
         instances.Add(playerContainer);
         instances.Add(opponentContainer);

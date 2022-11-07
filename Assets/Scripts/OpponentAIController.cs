@@ -20,6 +20,9 @@ public class OpponentAIController : MonoBehaviour
     private Animator opponentAnimator;
     private GameObject[] opponents;
     private int opponentIndex;
+    [SerializeField]
+    private GameObject nicknameCanvas;
+
 
 
     void Awake()
@@ -172,5 +175,11 @@ public class OpponentAIController : MonoBehaviour
         {
             go.GetComponentInChildren<Renderer>().material = material;
         }
+    }
+
+    public void SetPlayerName(string name)
+    {
+        BillboardNickname nicknameController = Instantiate(nicknameCanvas, transform).GetComponent<BillboardNickname>();
+        nicknameController.SetText(name);
     }
 }
