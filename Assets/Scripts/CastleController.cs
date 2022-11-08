@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
+
 
 public class CastleController : MonoBehaviour
 {
@@ -11,7 +13,7 @@ public class CastleController : MonoBehaviour
     private string enemyTag;
     private GameObject[] castles;
     public GameObject healthBar;
-    private float transformSize = 1.5f;
+    private float castleMinHeight = -1.5f;
     public GameObject particle;
     public GameObject destructionParticle;
     private bool canMakeBang = true;
@@ -27,24 +29,6 @@ public class CastleController : MonoBehaviour
         }
 
         SetCastleSkin(0);
-    }
-
-    void Update()
-    {
-        if (GameManager.Instance.state != GameState.Game)
-        {
-            return;
-        }
-
-        float transformFactor = transformSize / baseHealth;
-        float currentHeight = Mathf.Round(transform.position.y + transformSize * 10f) / 10f;
-        float nextHeight = Mathf.Round(transformFactor * (baseHealth + baseHealth - health) * 10f) / 10f;
-
-        if (currentHeight != nextHeight)
-        {
-            Vector3 newPos = new Vector3(transform.position.x,currentHeight - nextHeight, transform.position.z);
-            transform.position = newPos;
-        }
     }
 
     void OnDestroy()
@@ -67,6 +51,11 @@ public class CastleController : MonoBehaviour
             if (--health != 0)
             {
                 Destroy(other.gameObject);
+
+                float transformFactor = castleMinHeight / baseHealth;
+                float height = transformFactor * (baseHealth - health);
+                transform.DOMoveY(height, 0.1f).SetEase(Ease.InOutElastic);
+
                 if (canMakeBang)
                 {
                     canMakeBang = false;
@@ -78,10 +67,8 @@ public class CastleController : MonoBehaviour
             {
                 Destroy(other.gameObject);
                 AnimateDestruction();
-                Vector3 newPos = new Vector3(transform.position.x, -20, transform.position.z);
-                transform.position = newPos;
                 Destroy(arch.gameObject);
-
+                transform.DOMoveY(-20, 0.01f);
 
                 if (isMyCastle)
                 {
