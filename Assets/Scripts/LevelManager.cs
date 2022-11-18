@@ -90,19 +90,19 @@ public class LevelManager : MonoBehaviour
     private void InstantiateDecorations()
     {
         GameObject decorationInstance = Instantiate(levels[level].decoration, Vector3.zero, Quaternion.Euler(0, 0, 0));
-        GameObject[] buildings = GameObject.FindGameObjectsWithTag("Buildings");
-        // GameObject platformStand = GameObject.FindWithTag("PlatformStand");
+        // GameObject[] buildings = GameObject.FindGameObjectsWithTag("Buildings");
+        GameObject platformStand = GameObject.FindWithTag("PlatformStand");
         GameObject platform = GameObject.FindWithTag("Platform");
         GameObject floor = GameObject.FindWithTag("Floor");
 
         platform.GetComponent<Renderer>().material = levels[level].mapPlatformMaterial;
         floor.GetComponent<Renderer>().material = levels[level].decorationFloorMaterial;
 
-        // platformStand.GetComponent<Renderer>().material = levels[level].mapStandMaterial;
-        foreach (GameObject building in buildings)
-        {
-            building.GetComponent<Renderer>().material = levels[level].decorationBuildingsMaterial;
-        }
+        platformStand.GetComponent<Renderer>().material = levels[level].mapStandMaterial;
+        // foreach (GameObject building in buildings)
+        // {
+        //     building.GetComponent<Renderer>().material = levels[level].decorationBuildingsMaterial;
+        // }
 
         RenderSettings.fogColor = levels[level].fogColor;
 
