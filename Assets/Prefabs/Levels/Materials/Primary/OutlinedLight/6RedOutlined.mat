@@ -10,6 +10,7 @@ Material:
   m_Name: 6RedOutlined
   m_Shader: {fileID: 4800000, guid: dd496457a855aa341b0d7b7b475a7a3a, type: 3}
   m_ValidKeywords:
+  - TCP2_RAMPTEXT
   - TCP2_ZSMOOTH_ON
   m_InvalidKeywords:
   - OUTLINES

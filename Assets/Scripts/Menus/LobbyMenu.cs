@@ -25,7 +25,7 @@ public class LobbyMenu : MonoBehaviour
 
     void OnEnable()
     {
-        // PlayerPrefs.DeleteAll();
+        PlayerPrefs.DeleteAll();
 
         int level = PlayerPrefs.GetInt(SerializableFields.Level, 1);
         int coins = PlayerPrefs.GetInt(SerializableFields.Coins, 0);
