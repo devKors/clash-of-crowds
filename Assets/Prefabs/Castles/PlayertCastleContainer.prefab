@@ -8347,7 +8347,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 14506
+  m_VersionIndex: 14533
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -8679,8 +8679,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.5, y: 2, z: 1.5}
-  m_Center: {x: 0, y: 1, z: 0}
+  m_Size: {x: 1.5, y: 2, z: 1.8231957}
+  m_Center: {x: 0, y: 1, z: 0.16159785}
 --- !u!1001 &988108049617506813
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8694,7 +8694,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1659134877512076574, guid: 2f643f7ffa6404872ba61370e37cdc19, type: 3}
       propertyPath: m_VersionIndex
-      value: 9773
+      value: 9800
       objectReference: {fileID: 0}
     - target: {fileID: 1980795925415084597, guid: 2f643f7ffa6404872ba61370e37cdc19, type: 3}
       propertyPath: m_Mesh
@@ -8762,7 +8762,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5524030748829035728, guid: 2f643f7ffa6404872ba61370e37cdc19, type: 3}
       propertyPath: m_VersionIndex
-      value: 5121
+      value: 5148
       objectReference: {fileID: 0}
     - target: {fileID: 5575036817814704358, guid: 2f643f7ffa6404872ba61370e37cdc19, type: 3}
       propertyPath: m_Mesh

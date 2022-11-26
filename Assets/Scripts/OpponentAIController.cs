@@ -47,6 +47,19 @@ public class OpponentAIController : MonoBehaviour
 
         bringItems = GetRandomBringItems();
         withdrawItems = GameObject.FindGameObjectWithTag("RedWithdrawItems");
+        int level = PlayerPrefs.GetInt(SerializableFields.Level, 0);
+
+        float nextSpeed = 4f + (level / 25);
+
+        if (nextSpeed > 5)
+        {
+            opponent.speed = 5f;
+        }
+        else
+        {
+            opponent.speed = nextSpeed;
+        }
+        
     }
 
     void Update()

@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         SetGameState(GameState.Lobby);
+        // Application.targetFrameRate = 60;
     }
 
     public void SetGameState(GameState nextState)

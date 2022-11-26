@@ -45,23 +45,49 @@ public class StackableBoxSpawnerController : MonoBehaviour
 
     private void InstantiateRandomStackableBox(Transform slot)
     {
-        int percent = UnityEngine.Random.Range(0, 100);
 
-        if (percent <= percentToSpawnMy)
+        if (isFirstSpawn)
         {
+            int percent = UnityEngine.Random.Range(0, 100);
+
+            if (percent <= percentToSpawnMy)
+            {
              GameObject go = Instantiate(playerStackableBox, slot);
-             if (playerMaterial != null)
-             {
-                 go.GetComponentInChildren<Renderer>().material = playerMaterial;
-             }
+                if (playerMaterial != null)
+                {
+                    go.GetComponentInChildren<Renderer>().material = playerMaterial;
+                }
+            }
+            else
+            {
+                GameObject go = Instantiate(opponentStackableBox, slot);
+                if (opponentMaterial != null)
+                {
+                    go.GetComponentInChildren<Renderer>().material = opponentMaterial;
+                }
+            }
         }
         else
         {
-             GameObject go = Instantiate(opponentStackableBox, slot);
-             if (opponentMaterial != null)
-             {
-                 go.GetComponentInChildren<Renderer>().material = opponentMaterial;
-             }
+            int playerBoxesCount = GameObject.FindGameObjectsWithTag(playerStackableBox.tag).Length;
+            int opponentBoxesCount = GameObject.FindGameObjectsWithTag(opponentStackableBox.tag).Length;
+
+            if ((playerBoxesCount - 8) <= opponentBoxesCount)
+            {
+                GameObject go = Instantiate(playerStackableBox, slot);
+                if (playerMaterial != null)
+                {
+                    go.GetComponentInChildren<Renderer>().material = playerMaterial;
+                }
+            }
+            else
+            {
+                GameObject go = Instantiate(opponentStackableBox, slot);
+                if (opponentMaterial != null)
+                {
+                    go.GetComponentInChildren<Renderer>().material = opponentMaterial;
+                }
+            }
         }
 
         StartCoroutine(SetActiveStackableBox(slot));

@@ -15,8 +15,8 @@ MonoBehaviour:
   map: {fileID: 2689167979603935965, guid: 3e5e9bebb4c7647eaa97da1f00b0a539, type: 3}
   mapPlatformMaterial: {fileID: 2100000, guid: a2e5ddbcbef4949feaf3d7932177b926, type: 2}
   mapStandMaterial: {fileID: 2100000, guid: 59af0fe52d69349ee96d76aef1bdacf4, type: 2}
-  decoration: {fileID: 8524980933795305673, guid: 109a7958124ac4196a4bdd80caea9c03, type: 3}
+  decoration: {fileID: 7945936695136074626, guid: 6799d8ab6109843abb905222f177e86f, type: 3}
   decorationBuildingsMaterial: {fileID: 2100000, guid: 3c21c69520e1b4284881acf0868e64ac, type: 2}
-  decorationFloorMaterial: {fileID: 2100000, guid: 39a7df4d42ade4e40a9afa2299203537, type: 2}
-  fogColor: {r: 0.28627452, g: 0.86274517, b: 1, a: 0}
+  decorationFloorMaterial: {fileID: 2100000, guid: 78e747bc522994a429d18b6a5cc82b1b, type: 2}
+  fogColor: {r: 0.13333334, g: 0.9803922, b: 1, a: 0}
   stackableBoxSpawners: {fileID: 5884333263174318132, guid: 77936de6245124253a7b4d3cf2ac8ae3, type: 3}

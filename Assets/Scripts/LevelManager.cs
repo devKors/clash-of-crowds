@@ -18,6 +18,7 @@ public class LevelManager : MonoBehaviour
     public Material[] lightMaterials;
     public Material[] darkMaterials;
     public Material[] outlinedMaterials;
+    public Material[] outlinedBoldMaterials;
     private List<GameObject> instances;
     private int materialIndex = 0;
     private int playerMaterialIndex = 0;
@@ -79,10 +80,10 @@ public class LevelManager : MonoBehaviour
     {
         GameObject mapInstance = Instantiate(levels[level].map, Vector3.zero, Quaternion.Euler(0, -90, 0));
         GameObject opponentPlane = GameObject.FindWithTag("OpponentPlane");
-        opponentPlane.GetComponent<Renderer>().material = outlinedMaterials[materialIndex];
+        opponentPlane.GetComponent<Renderer>().material = darkMaterials[materialIndex];
 
         GameObject playerPlane = GameObject.FindWithTag("PlayerPlane");
-        playerPlane.GetComponent<Renderer>().material = outlinedMaterials[playerMaterialIndex];
+        playerPlane.GetComponent<Renderer>().material = darkMaterials[playerMaterialIndex];
 
         instances.Add(mapInstance);
     }
@@ -128,11 +129,11 @@ public class LevelManager : MonoBehaviour
         int additionalHealth = Random.Range(-2, 2);
 
         opponentCastleController.SetCastleParams(10 + towerHealth + additionalHealth, false, "PlayerUnit", 2);
-        opponentCastleController.SetCastleMaterial(outlinedMaterials[materialIndex], outlinedMaterials[materialIndex]);
+        opponentCastleController.SetCastleMaterial(outlinedMaterials[materialIndex], darkMaterials[materialIndex]);
         opponentCastleController.SetCustleHealthBar(outlinedMaterials[materialIndex]);
 
         playerCastleController.SetCastleParams(10 + towerHealth, true, "OpponentUnit", 2);
-        playerCastleController.SetCastleMaterial(outlinedMaterials[playerMaterialIndex], outlinedMaterials[playerMaterialIndex]);
+        playerCastleController.SetCastleMaterial(outlinedMaterials[playerMaterialIndex], darkMaterials[playerMaterialIndex]);
         playerCastleController.SetCustleHealthBar(outlinedMaterials[playerMaterialIndex]);
 
     }
@@ -187,14 +188,14 @@ public class LevelManager : MonoBehaviour
         GameObject opponentContainer = Instantiate(opponentPrefab, opponentCoords.transform.position, Quaternion.identity);
 
         OpponentAIController opponentAIController = opponentContainer.GetComponent<OpponentAIController>();
-        opponentAIController.SetOpponentMaterial(outlinedMaterials[materialIndex]);
+        opponentAIController.SetOpponentMaterial(outlinedBoldMaterials[materialIndex]);
 
         int currentLevel = PlayerPrefs.GetInt(SerializableFields.Level, 0);
         int nameIndex =  currentLevel % GlobalConstants.enemyNames.Length;
         opponentAIController.SetPlayerName(GlobalConstants.enemyNames[nameIndex]);
 
         PlayerController playerController = playerContainer.GetComponent<PlayerController>();
-        playerController.SetPlayerMaterial(outlinedMaterials[playerMaterialIndex]);
+        playerController.SetPlayerMaterial(outlinedBoldMaterials[playerMaterialIndex]);
         playerController.SetPlayerName("Player");
 
         instances.Add(playerContainer);
@@ -212,3 +213,11 @@ public class LevelManager : MonoBehaviour
 
     }
 }
+
+// Пальмы
+// Темные елки
+// Темное дерево
+// Белое дерево с лимонами
+// Дерево с розовыми полосками
+// Высокое дерево
+// Белое с яблоками

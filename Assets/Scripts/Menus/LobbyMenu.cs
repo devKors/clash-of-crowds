@@ -25,13 +25,18 @@ public class LobbyMenu : MonoBehaviour
 
     void OnEnable()
     {
-        PlayerPrefs.DeleteAll();
+        // PlayerPrefs.DeleteAll();
 
         int level = PlayerPrefs.GetInt(SerializableFields.Level, 1);
-        int coins = PlayerPrefs.GetInt(SerializableFields.Coins, 0);
+        int coins = PlayerPrefs.GetInt(SerializableFields.Coins, 500);
         int towerHealth = PlayerPrefs.GetInt(SerializableFields.TowerHealth, 0);
         int numberOfItems = PlayerPrefs.GetInt(SerializableFields.NumberOfItems, 0);
         int moneyMultiplyer = PlayerPrefs.GetInt(SerializableFields.MoneyMultiplyer, 0);
+
+        if (coins == 500)
+        {
+            PlayerPrefs.SetInt(SerializableFields.Coins, 500);
+        }
 
 
         levelLabel.text = $"Level {level}";

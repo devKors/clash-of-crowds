@@ -64,8 +64,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.5, y: 2, z: 1.5}
-  m_Center: {x: 0, y: 1, z: 0}
+  m_Size: {x: 1.5, y: 2, z: 1.8444201}
+  m_Center: {x: 0, y: 1, z: -0.17221028}
 --- !u!1 &4888442342798656687
 GameObject:
   m_ObjectHideFlags: 0
@@ -8496,7 +8496,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 14506
+  m_VersionIndex: 14521
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -8694,7 +8694,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1659134877512076574, guid: 2f643f7ffa6404872ba61370e37cdc19, type: 3}
       propertyPath: m_VersionIndex
-      value: 9755
+      value: 9770
       objectReference: {fileID: 0}
     - target: {fileID: 1980795925415084597, guid: 2f643f7ffa6404872ba61370e37cdc19, type: 3}
       propertyPath: m_Mesh
@@ -8754,7 +8754,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5524030748829035728, guid: 2f643f7ffa6404872ba61370e37cdc19, type: 3}
       propertyPath: m_VersionIndex
-      value: 5103
+      value: 5118
       objectReference: {fileID: 0}
     - target: {fileID: 5575036817814704358, guid: 2f643f7ffa6404872ba61370e37cdc19, type: 3}
       propertyPath: m_Mesh

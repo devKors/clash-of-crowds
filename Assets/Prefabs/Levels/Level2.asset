@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Level2
   m_EditorClassIdentifier: 
   map: {fileID: 2689167979603935965, guid: 3e5e9bebb4c7647eaa97da1f00b0a539, type: 3}
-  mapPlatformMaterial: {fileID: 2100000, guid: d42eb94cb395743e28bc721bd32434a0, type: 2}
-  mapStandMaterial: {fileID: 2100000, guid: d42eb94cb395743e28bc721bd32434a0, type: 2}
-  decoration: {fileID: 448857872121881512, guid: 82cf351583115427491dc8d72b1f9614, type: 3}
-  decorationBuildingsMaterial: {fileID: 2100000, guid: c0b1de50407694032a4048daaf65ee15, type: 2}
-  decorationFloorMaterial: {fileID: 2100000, guid: d42eb94cb395743e28bc721bd32434a0, type: 2}
-  fogColor: {r: 0.7411765, g: 0.9176471, b: 0.61960787, a: 0}
-  stackableBoxSpawners: {fileID: 6114545054547460330, guid: 886e23550d0af48ec8d53fcc6b868bd9, type: 3}
+  mapPlatformMaterial: {fileID: 2100000, guid: ca84d4480a2404aa38b17347df44e234, type: 2}
+  mapStandMaterial: {fileID: 2100000, guid: 3c21c69520e1b4284881acf0868e64ac, type: 2}
+  decoration: {fileID: 3003249988509331182, guid: b404d89a6efa348fd8afe3e84be7af46, type: 3}
+  decorationBuildingsMaterial: {fileID: 2100000, guid: ca84d4480a2404aa38b17347df44e234, type: 2}
+  decorationFloorMaterial: {fileID: 2100000, guid: ed23916c33c6d468a9bedb3b70a63bd0, type: 2}
+  fogColor: {r: 0.003921569, g: 0.654902, b: 1, a: 0}
+  stackableBoxSpawners: {fileID: 5884333263174318132, guid: 77936de6245124253a7b4d3cf2ac8ae3, type: 3}

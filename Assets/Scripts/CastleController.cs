@@ -128,6 +128,18 @@ public class CastleController : MonoBehaviour
         foreach (GameObject go in castles)
         {
             go.GetComponent<Renderer>().materials = m;
+            // try
+            // {
+            //     go.transform.GetChild(2).GetComponent<Renderer>().materials = m;
+            //     go.transform.GetChild(6).GetComponent<Renderer>().materials = m;
+            //     go.transform.GetChild(7).GetComponent<Renderer>().materials = m;
+            //     go.transform.GetChild(8).GetComponent<Renderer>().materials = m;
+            // }
+            // catch (System.Exception)
+            // {
+                
+            // }
+            
         }
 
         Transform castleTransform = transform.GetChild(2);
@@ -141,7 +153,8 @@ public class CastleController : MonoBehaviour
 
     public void SetCustleHealthBar(Material material)
     {
-        GameObject hb = Instantiate(healthBar, transform);
+        Vector3 pos = transform.position;
+        GameObject hb = Instantiate(healthBar, new Vector3(pos.x, 4.4f, pos.z), Quaternion.identity, transform);
         BillBoardCastle controller = hb.GetComponent<BillBoardCastle>();
         controller.SetCoverColor(material.color);
     }
